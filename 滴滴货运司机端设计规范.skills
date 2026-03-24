@@ -1,0 +1,1215 @@
+{
+  "name": "滴滴货运司机端设计规范",
+  "description": "滴滴货运司机端的完整设计规范，包括颜色、字体、组件等设计元素",
+  "version": "1.3.0",
+  "author": "MasterGo",
+  "createdAt": "2026-03-16",
+  "updatedAt": "2026-03-16",
+  "corePrinciples": [
+    {
+      "name": "清晰",
+      "description": "界面设计清晰明了，信息层次分明"
+    },
+    {
+      "name": "高效",
+      "description": "操作流程简洁，提高司机工作效率"
+    },
+    {
+      "name": "统一",
+      "description": "视觉元素统一，保持品牌一致性"
+    }
+  ],
+  "categories": [
+    {
+      "name": "基础样式规范",
+      "items": [
+        {
+          "name": "文字",
+          "items": [
+            {
+              "name": "中文字体",
+              "value": "PingFang SC",
+              "description": "主要中文字体"
+            },
+            {
+              "name": "英文字体",
+              "value": "Barlow",
+              "description": "主要英文字体"
+            },
+            {
+              "name": "字体大小",
+              "items": [
+                {
+                  "name": "大标题",
+                  "value": "48px",
+                  "description": "页面大标题"
+                },
+                {
+                  "name": "小标题",
+                  "value": "40px",
+                  "description": "页面小标题"
+                },
+                {
+                  "name": "正文",
+                  "value": "36px",
+                  "description": "正文文字"
+                },
+                {
+                  "name": "辅助文字",
+                  "value": "28px",
+                  "description": "辅助说明文字"
+                },
+                {
+                  "name": "小字",
+                  "value": "24px",
+                  "description": "小字体文字"
+                },
+                {
+                  "name": "微小文字",
+                  "value": "20px",
+                  "description": "微小说明文字"
+                }
+              ]
+            },
+            {
+              "name": "字体粗细",
+              "items": [
+                {
+                  "name": "常规",
+                  "value": "Regular",
+                  "description": "常规字重"
+                },
+                {
+                  "name": "中等",
+                  "value": "Medium",
+                  "description": "中等字重"
+                },
+                {
+                  "name": "中粗体",
+                  "value": "Semibold",
+                  "description": "中粗字重"
+                },
+                {
+                  "name": "粗体",
+                  "value": "Bold",
+                  "description": "粗体字重"
+                }
+              ]
+            },
+            {
+              "name": "行高",
+              "items": [
+                {
+                  "name": "大标题",
+                  "value": "72px",
+                  "description": "大标题行高"
+                },
+                {
+                  "name": "小标题",
+                  "value": "60px",
+                  "description": "小标题行高"
+                },
+                {
+                  "name": "正文",
+                  "value": "54px",
+                  "description": "正文行高"
+                },
+                {
+                  "name": "辅助文字",
+                  "value": "42px",
+                  "description": "辅助文字行高"
+                },
+                {
+                  "name": "小字",
+                  "value": "36px",
+                  "description": "小字行高"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "颜色",
+          "items": [
+            {
+              "name": "品牌色",
+              "items": [
+                {
+                  "name": "主品牌色",
+                  "value": "#12C79F",
+                  "description": "滴滴货运主色调"
+                },
+                {
+                  "name": "温暖橙",
+                  "value": "#FF6435",
+                  "description": "高亮色"
+                }
+              ]
+            },
+            {
+              "name": "功能色",
+              "items": [
+                {
+                  "name": "成功色",
+                  "value": "#2DBB7A",
+                  "description": "成功状态颜色"
+                },
+                {
+                  "name": "警告色",
+                  "value": "#FF9F0E",
+                  "description": "警告状态颜色"
+                },
+                {
+                  "name": "错误色",
+                  "value": "#FF4340",
+                  "description": "错误状态颜色"
+                },
+                {
+                  "name": "导航色",
+                  "value": "#168CFF",
+                  "description": "导航链接颜色"
+                }
+              ]
+            },
+            {
+              "name": "背景色",
+              "items": [
+                {
+                  "name": "页面背景色",
+                  "value": "#F8F9FC",
+                  "description": "页面背景色"
+                },
+                {
+                  "name": "深蓝色背景",
+                  "value": "#193458",
+                  "description": "功能色背景"
+                },
+                {
+                  "name": "浅灰色背景",
+                  "value": "#F6F8FB",
+                  "description": "次要背景色"
+                },
+                {
+                  "name": "分割线背景",
+                  "value": "#EBECF2",
+                  "description": "分割线颜色"
+                }
+              ]
+            },
+            {
+              "name": "文字颜色",
+              "items": [
+                {
+                  "name": "主文字",
+                  "value": "#222222",
+                  "description": "主要文字颜色"
+                },
+                {
+                  "name": "次文字",
+                  "value": "#666666",
+                  "description": "次要文字颜色"
+                },
+                {
+                  "name": "辅助文字",
+                  "value": "#999999",
+                  "description": "辅助文字颜色"
+                },
+                {
+                  "name": "禁用文字",
+                  "value": "#CCCCCC",
+                  "description": "禁用状态文字颜色"
+                }
+              ]
+            },
+            {
+              "name": "边框颜色",
+              "items": [
+                {
+                  "name": "主要边框",
+                  "value": "#CBD8F2",
+                  "description": "主要边框颜色"
+                },
+                {
+                  "name": "次要边框",
+                  "value": "#EBECF2",
+                  "description": "次要边框颜色"
+                }
+              ]
+            },
+            {
+              "name": "其他颜色",
+              "items": [
+                {
+                  "name": "白色",
+                  "value": "#FFFFFF",
+                  "description": "白色背景"
+                },
+                {
+                  "name": "黑色",
+                  "value": "#000000",
+                  "description": "黑色文字"
+                },
+                {
+                  "name": "深灰色",
+                  "value": "#1A1A1A",
+                  "description": "深灰色文字"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "投影",
+          "items": [
+            {
+              "name": "轻微投影",
+              "value": "0px 1px 0px 0px #CBD8F2",
+              "description": "轻微投影，用于卡片底部"
+            },
+            {
+              "name": "中等投影",
+              "value": "0px 4px 12px 0px rgba(0, 0, 0, 0.08)",
+              "description": "中等投影，用于悬浮卡片"
+            },
+            {
+              "name": "强烈投影",
+              "value": "0px 8px 24px 0px rgba(0, 0, 0, 0.12)",
+              "description": "强烈投影，用于弹窗"
+            }
+          ]
+        },
+        {
+          "name": "圆角",
+          "items": [
+            {
+              "name": "微小圆角",
+              "value": "4px",
+              "description": "层级较多情况标签类型适用"
+            },
+            {
+              "name": "小圆角",
+              "value": "8px",
+              "description": "标签/小组件类型适用"
+            },
+            {
+              "name": "中圆角",
+              "value": "16px",
+              "description": "页面标准卡片中图片类容器"
+            },
+            {
+              "name": "中大圆角",
+              "value": "20px",
+              "description": "页面标准卡片中全局按钮类容器"
+            },
+            {
+              "name": "大圆角",
+              "value": "24px",
+              "description": "页面标准卡片内子卡片（670px）"
+            },
+            {
+              "name": "超大圆角",
+              "value": "32px",
+              "description": "页面标准卡片容器（710px）"
+            },
+            {
+              "name": "圆形",
+              "value": "50%",
+              "description": "圆形元素"
+            }
+          ]
+        },
+        {
+          "name": "文字组合",
+          "items": [
+            {
+              "name": "标题组合",
+              "properties": {
+                "titleFontSize": "36px",
+                "titleFontWeight": "Semibold",
+                "titleColor": "#333333",
+                "subtitleFontSize": "24px",
+                "subtitleFontWeight": "Regular",
+                "subtitleColor": "#666666",
+                "lineHeight": "54px"
+              }
+            },
+            {
+              "name": "正文组合",
+              "properties": {
+                "fontSize": "28px",
+                "fontWeight": "Regular",
+                "color": "#333333",
+                "lineHeight": "42px",
+                "paragraphSpacing": "16px"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "通用结构规范",
+      "items": [
+        {
+          "name": "间距",
+          "items": [
+            {
+              "name": "极微小间距",
+              "value": "2px",
+              "description": "极微小间距"
+            },
+            {
+              "name": "微小间距",
+              "value": "4px",
+              "description": "微小间距"
+            },
+            {
+              "name": "小间距",
+              "value": "8px",
+              "description": "组件内部小间距"
+            },
+            {
+              "name": "中小组间距",
+              "value": "12px",
+              "description": "组件间中小组间距"
+            },
+            {
+              "name": "中等间距",
+              "value": "16px",
+              "description": "组件间中等间距"
+            },
+            {
+              "name": "中大间距",
+              "value": "20px",
+              "description": "模块间中大间距"
+            },
+            {
+              "name": "大间距",
+              "value": "24px",
+              "description": "模块间大间距"
+            },
+            {
+              "name": "超大间距",
+              "value": "32px",
+              "description": "区域间超大间距"
+            },
+            {
+              "name": "特大间距",
+              "value": "40px",
+              "description": "页面级特大间距"
+            },
+            {
+              "name": "巨间距",
+              "value": "48px",
+              "description": "页面级巨间距"
+            }
+          ]
+        },
+        {
+          "name": "布局",
+          "items": [
+            {
+              "name": "页面容器",
+              "properties": {
+                "paddingHorizontal": "24px",
+                "paddingTop": "100px",
+                "paddingBottom": "32px",
+                "maxWidth": "750px",
+                "marginHorizontal": "auto"
+              }
+            },
+            {
+              "name": "内容容器",
+              "properties": {
+                "padding": "24px",
+                "backgroundColor": "#FFFFFF",
+                "borderRadius": "8px"
+              }
+            }
+          ]
+        },
+        {
+          "name": "弹出层",
+          "items": [
+            {
+              "name": "模态弹窗",
+              "properties": {
+                "backgroundColor": "#FFFFFF",
+                "borderRadius": "16px",
+                "padding": "32px",
+                "shadow": "0px 8px 24px 0px rgba(0, 0, 0, 0.12)",
+                "maxWidth": "600px",
+                "maxHeight": "80%",
+                "zIndex": "1000"
+              }
+            },
+            {
+              "name": "半弹窗",
+              "properties": {
+                "position": "fixed",
+                "bottom": "0",
+                "left": "0",
+                "right": "0",
+                "backgroundColor": "#FFFFFF",
+                "borderRadius": "48px 48px 0 0",
+                "zIndex": "1000",
+                "contentArea": {
+                  "backgroundColor": "#F8F9FC",
+                  "margin": "28px 28px 16px",
+                  "padding": "47px 235px",
+                  "borderRadius": "24px"
+                },
+                "buttonArea": {
+                  "padding": "16px 24px",
+                  "gap": "20px"
+                },
+                "footerIndicator": {
+                  "height": "50px",
+                  "indicatorWidth": "268px",
+                  "indicatorHeight": "10px",
+                  "indicatorColor": "#333333",
+                  "indicatorBorderRadius": "200px"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "卡片",
+          "items": [
+            {
+              "name": "基础卡片",
+              "properties": {
+                "backgroundColor": "#FFFFFF",
+                "borderRadius": "8px",
+                "shadow": "0px 1px 0px 0px #CBD8F2",
+                "padding": "24px",
+                "marginBottom": "16px"
+              }
+            },
+            {
+              "name": "带阴影卡片",
+              "properties": {
+                "backgroundColor": "#FFFFFF",
+                "borderRadius": "8px",
+                "shadow": "0px 4px 12px 0px rgba(0, 0, 0, 0.08)",
+                "padding": "24px",
+                "marginBottom": "16px"
+              }
+            },
+            {
+              "name": "无边框卡片",
+              "properties": {
+                "backgroundColor": "#FFFFFF",
+                "borderRadius": "8px",
+                "border": "none",
+                "padding": "24px",
+                "marginBottom": "16px"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "通用元素规范",
+      "items": [
+        {
+          "name": "图标",
+          "items": [
+            {
+              "name": "图标风格",
+              "value": "线性图标",
+              "description": "统一使用线性图标风格"
+            },
+            {
+              "name": "图标尺寸",
+              "items": [
+                {
+                  "name": "小图标",
+                  "value": "24px",
+                  "description": "小尺寸图标"
+                },
+                {
+                  "name": "中等图标",
+                  "value": "32px",
+                  "description": "中等尺寸图标"
+                },
+                {
+                  "name": "大图标",
+                  "value": "48px",
+                  "description": "大尺寸图标"
+                },
+                {
+                  "name": "超大图标",
+                  "value": "64px",
+                  "description": "超大尺寸图标"
+                }
+              ]
+            },
+            {
+              "name": "图标颜色",
+              "items": [
+                {
+                  "name": "主图标颜色",
+                  "value": "#333333",
+                  "description": "主要图标颜色"
+                },
+                {
+                  "name": "次要图标颜色",
+                  "value": "#666666",
+                  "description": "次要图标颜色"
+                },
+                {
+                  "name": "辅助图标颜色",
+                  "value": "#999999",
+                  "description": "辅助图标颜色"
+                },
+                {
+                  "name": "强调图标颜色",
+                  "value": "#FF6435",
+                  "description": "强调图标颜色"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "标签",
+          "items": [
+            {
+              "name": "主色标签",
+              "properties": {
+                "backgroundColor": "#FFF6F1",
+                "textColor": "#FF7A37",
+                "borderRadius": "8px",
+                "padding": "6px 12px",
+                "fontSize": "24px",
+                "fontWeight": "Medium",
+                "height": "40px"
+              }
+            },
+            {
+              "name": "成功标签",
+              "properties": {
+                "backgroundColor": "rgba(0, 181, 150, 0.05)",
+                "textColor": "#00B596",
+                "borderRadius": "8px",
+                "padding": "6px 12px",
+                "fontSize": "24px",
+                "fontWeight": "Medium",
+                "height": "40px"
+              }
+            },
+            {
+              "name": "警示标签",
+              "properties": {
+                "backgroundColor": "rgba(255, 67, 64, 0.08)",
+                "textColor": "#FF4340",
+                "borderRadius": "8px",
+                "padding": "6px 12px",
+                "fontSize": "24px",
+                "fontWeight": "Medium",
+                "height": "40px"
+              }
+            },
+            {
+              "name": "常规标签",
+              "properties": {
+                "backgroundColor": "#F1F1F1",
+                "textColor": "#000000",
+                "borderRadius": "8px",
+                "padding": "6px 12px",
+                "fontSize": "24px",
+                "fontWeight": "Regular",
+                "height": "40px"
+              }
+            }
+          ]
+        },
+        {
+          "name": "按钮",
+          "items": [
+            {
+              "name": "全局按钮",
+              "items": [
+                {
+                  "name": "主要全局/吸底按钮——A",
+                  "properties": {
+                    "backgroundColor": "#FF6435",
+                    "textColor": "#FFFFFF",
+                    "borderRadius": "8px",
+                    "fontSize": "36px",
+                    "fontWeight": "Medium",
+                    "padding": "16px 32px",
+                    "height": "80px",
+                    "states": {
+                      "hover": {
+                        "backgroundColor": "#FF6435",
+                        "opacity": "0.7"
+                      },
+                      "disabled": {
+                        "backgroundColor": "#E1E1E1",
+                        "textColor": "#999999",
+                        "opacity": "0.3"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "主要全局/吸底按钮——B",
+                  "properties": {
+                    "backgroundColor": "#FF6435",
+                    "textColor": "#FFFFFF",
+                    "borderRadius": "8px",
+                    "fontSize": "32px",
+                    "fontWeight": "Medium",
+                    "padding": "16px 32px",
+                    "height": "72px",
+                    "states": {
+                      "hover": {
+                        "backgroundColor": "#FF6435",
+                        "opacity": "0.7"
+                      },
+                      "disabled": {
+                        "backgroundColor": "#E1E1E1",
+                        "textColor": "#999999",
+                        "opacity": "0.3"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "name": "局部按钮",
+              "items": [
+                {
+                  "name": "次要按钮",
+                  "properties": {
+                    "backgroundColor": "#F8F9FC",
+                    "textColor": "#333333",
+                    "borderRadius": "8px",
+                    "border": "1px solid #CBD8F2",
+                    "fontSize": "36px",
+                    "fontWeight": "Medium",
+                    "padding": "16px 32px",
+                    "height": "80px",
+                    "states": {
+                      "hover": {
+                        "backgroundColor": "#F8F9FC",
+                        "opacity": "0.7"
+                      },
+                      "disabled": {
+                        "backgroundColor": "#F8F9FC",
+                        "textColor": "#999999",
+                        "borderColor": "#E1E1E1",
+                        "opacity": "0.3"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "文本按钮",
+                  "properties": {
+                    "backgroundColor": "transparent",
+                    "textColor": "#FF6435",
+                    "fontSize": "36px",
+                    "fontWeight": "Medium",
+                    "padding": "8px 16px",
+                    "states": {
+                      "hover": {
+                        "opacity": "0.7"
+                      },
+                      "disabled": {
+                        "textColor": "#999999",
+                        "opacity": "0.3"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "小型按钮",
+                  "properties": {
+                    "backgroundColor": "#FF6435",
+                    "textColor": "#FFFFFF",
+                    "borderRadius": "6px",
+                    "fontSize": "28px",
+                    "fontWeight": "Medium",
+                    "padding": "12px 24px",
+                    "height": "64px",
+                    "states": {
+                      "hover": {
+                        "backgroundColor": "#FF6435",
+                        "opacity": "0.7"
+                      },
+                      "disabled": {
+                        "backgroundColor": "#E1E1E1",
+                        "textColor": "#999999",
+                        "opacity": "0.3"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "name": "按钮状态规范",
+              "items": [
+                {
+                  "name": "常态",
+                  "value": "正常显示状态",
+                  "description": "按钮的默认显示状态"
+                },
+                {
+                  "name": "点击态",
+                  "value": "常态的不透明度70%",
+                  "description": "按钮被点击时的状态"
+                },
+                {
+                  "name": "置灰态",
+                  "value": "常态的不透明度30%",
+                  "description": "按钮被禁用时的状态"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "基础组件规范",
+      "items": [
+        {
+          "name": "弹窗",
+          "items": [
+            {
+              "name": "确认弹窗",
+              "properties": {
+                "width": "600px",
+                "backgroundColor": "#FFFFFF",
+                "borderRadius": "16px",
+                "padding": "32px",
+                "shadow": "0px 8px 24px 0px rgba(0, 0, 0, 0.12)",
+                "titleFontSize": "36px",
+                "titleFontWeight": "Semibold",
+                "titleColor": "#333333",
+                "contentFontSize": "28px",
+                "contentColor": "#666666",
+                "buttonArea": {
+                  "paddingTop": "24px",
+                  "gap": "16px"
+                }
+              }
+            },
+            {
+              "name": "提示弹窗",
+              "properties": {
+                "width": "400px",
+                "backgroundColor": "#FFFFFF",
+                "borderRadius": "16px",
+                "padding": "24px",
+                "shadow": "0px 8px 24px 0px rgba(0, 0, 0, 0.12)",
+                "contentFontSize": "28px",
+                "contentColor": "#333333",
+                "autoClose": "3000ms"
+              }
+            }
+          ]
+        },
+        {
+          "name": "半弹窗",
+          "properties": {
+            "position": "fixed",
+            "bottom": "0",
+            "left": "0",
+            "right": "0",
+            "backgroundColor": "#FFFFFF",
+            "borderRadius": "48px 48px 0 0",
+            "zIndex": "1000",
+            "contentArea": {
+              "backgroundColor": "#F8F9FC",
+              "margin": "28px 28px 16px",
+              "padding": "47px 235px",
+              "borderRadius": "24px"
+            },
+            "buttonArea": {
+              "padding": "16px 24px",
+              "gap": "20px"
+            },
+            "footerIndicator": {
+              "height": "50px",
+              "indicatorWidth": "268px",
+              "indicatorHeight": "10px",
+              "indicatorColor": "#333333",
+              "indicatorBorderRadius": "200px"
+            }
+          }
+        },
+        {
+          "name": "列表与表单",
+          "items": [
+            {
+              "name": "基础列表",
+              "properties": {
+                "backgroundColor": "#FFFFFF",
+                "borderRadius": "8px",
+                "itemHeight": "88px",
+                "itemPadding": "24px",
+                "dividerColor": "#EFF2F6",
+                "dividerHeight": "1px"
+              }
+            },
+            {
+              "name": "列表项组合",
+              "properties": {
+                "titleFontSize": "32px",
+                "titleFontWeight": "Semibold",
+                "titleColor": "#333333",
+                "subtitleFontSize": "24px",
+                "subtitleColor": "#999999",
+                "statusFontSize": "32px",
+                "statusFontWeight": "Semibold",
+                "statusColor": "#F87B21",
+                "statusDescFontSize": "24px",
+                "statusDescColor": "#999999",
+                "iconSize": "44px",
+                "iconColor": "#333333"
+              }
+            },
+            {
+              "name": "表单",
+              "items": [
+                {
+                  "name": "表单项",
+                  "properties": {
+                    "labelFontSize": "32px",
+                    "labelColor": "#333333",
+                    "labelMarginBottom": "12px",
+                    "inputHeight": "80px",
+                    "inputPadding": "16px",
+                    "inputBackgroundColor": "#F8F9FC",
+                    "inputBorderColor": "#CBD8F2",
+                    "inputBorderRadius": "8px",
+                    "errorMessageFontSize": "24px",
+                    "errorMessageColor": "#FF2D2D",
+                    "errorMessageMarginTop": "8px"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "标签页",
+          "items": [
+            {
+              "name": "单层Tab",
+              "items": [
+                {
+                  "name": "32号字·五项+（滚动）",
+                  "properties": {
+                    "backgroundColor": "#FFFFFF",
+                    "tabHeight": "89px",
+                    "tabFontSize": "32px",
+                    "activeTabFontWeight": "Semibold",
+                    "inactiveTabFontWeight": "Regular",
+                    "tabColor": "#333333",
+                    "activeTabColor": "#333333",
+                    "activeTabIndicatorColor": "#FF6435",
+                    "activeTabIndicatorHeight": "4px",
+                    "activeTabIndicatorWidth": "48px",
+                    "tabGap": "44px",
+                    "padding": "20px 0 12px",
+                    "dividerColor": "#EBEBEB",
+                    "dividerHeight": "1px"
+                  }
+                },
+                {
+                  "name": "32号字·四项",
+                  "properties": {
+                    "backgroundColor": "#FFFFFF",
+                    "tabHeight": "89px",
+                    "tabFontSize": "32px",
+                    "activeTabFontWeight": "Semibold",
+                    "inactiveTabFontWeight": "Regular",
+                    "tabColor": "#333333",
+                    "activeTabColor": "#333333",
+                    "activeTabIndicatorColor": "#FF6435",
+                    "activeTabIndicatorHeight": "4px",
+                    "activeTabIndicatorWidth": "48px",
+                    "tabGap": "66px",
+                    "padding": "20px 0 12px",
+                    "dividerColor": "#EBEBEB",
+                    "dividerHeight": "1px"
+                  }
+                },
+                {
+                  "name": "32号字·三项",
+                  "properties": {
+                    "backgroundColor": "#FFFFFF",
+                    "tabHeight": "89px",
+                    "tabFontSize": "32px",
+                    "activeTabFontWeight": "Semibold",
+                    "inactiveTabFontWeight": "Regular",
+                    "tabColor": "#333333",
+                    "activeTabColor": "#333333",
+                    "activeTabIndicatorColor": "#FF6435",
+                    "activeTabIndicatorHeight": "4px",
+                    "activeTabIndicatorWidth": "48px",
+                    "padding": "20px 0 12px",
+                    "dividerColor": "#EBEBEB",
+                    "dividerHeight": "1px"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "布局规范",
+      "items": [
+        {
+          "name": "间距",
+          "items": [
+            {
+              "name": "极微小间距",
+              "value": "2px",
+              "description": "极微小间距"
+            },
+            {
+              "name": "微小间距",
+              "value": "4px",
+              "description": "微小间距"
+            },
+            {
+              "name": "小间距",
+              "value": "8px",
+              "description": "组件内部小间距"
+            },
+            {
+              "name": "中小组间距",
+              "value": "12px",
+              "description": "组件间中小组间距"
+            },
+            {
+              "name": "中等间距",
+              "value": "16px",
+              "description": "组件间中等间距"
+            },
+            {
+              "name": "中大间距",
+              "value": "20px",
+              "description": "模块间中大间距"
+            },
+            {
+              "name": "大间距",
+              "value": "24px",
+              "description": "模块间大间距"
+            },
+            {
+              "name": "超大间距",
+              "value": "32px",
+              "description": "区域间超大间距"
+            },
+            {
+              "name": "特大间距",
+              "value": "40px",
+              "description": "页面级特大间距"
+            },
+            {
+              "name": "巨间距",
+              "value": "48px",
+              "description": "页面级巨间距"
+            }
+          ]
+        },
+        {
+          "name": "圆角",
+          "items": [
+            {
+              "name": "小圆角",
+              "value": "4px",
+              "description": "小元素圆角"
+            },
+            {
+              "name": "中圆角",
+              "value": "8px",
+              "description": "中等元素圆角"
+            },
+            {
+              "name": "大圆角",
+              "value": "16px",
+              "description": "大元素圆角"
+            },
+            {
+              "name": "超大圆角",
+              "value": "24px",
+              "description": "特殊元素圆角"
+            }
+          ]
+        },
+        {
+          "name": "布局容器",
+          "items": [
+            {
+              "name": "页面容器",
+              "properties": {
+                "paddingHorizontal": "24px",
+                "paddingTop": "100px",
+                "paddingBottom": "32px"
+              }
+            },
+            {
+              "name": "内容容器",
+              "properties": {
+                "maxWidth": "750px",
+                "marginHorizontal": "auto"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "图标规范",
+      "items": [
+        {
+          "name": "图标风格",
+          "value": "线性图标",
+          "description": "统一使用线性图标风格"
+        },
+        {
+          "name": "图标尺寸",
+          "items": [
+            {
+              "name": "小图标",
+              "value": "24px",
+              "description": "小尺寸图标"
+            },
+            {
+              "name": "中等图标",
+              "value": "32px",
+              "description": "中等尺寸图标"
+            },
+            {
+              "name": "大图标",
+              "value": "48px",
+              "description": "大尺寸图标"
+            },
+            {
+              "name": "超大图标",
+              "value": "64px",
+              "description": "超大尺寸图标"
+            }
+          ]
+        },
+        {
+          "name": "图标颜色",
+          "items": [
+            {
+              "name": "主图标颜色",
+              "value": "#333333",
+              "description": "主要图标颜色"
+            },
+            {
+              "name": "次要图标颜色",
+              "value": "#666666",
+              "description": "次要图标颜色"
+            },
+            {
+              "name": "辅助图标颜色",
+              "value": "#999999",
+              "description": "辅助图标颜色"
+            },
+            {
+              "name": "强调图标颜色",
+              "value": "#FF6435",
+              "description": "强调图标颜色"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "响应式规范",
+      "items": [
+        {
+          "name": "设计尺寸",
+          "value": "750px",
+          "description": "基于移动端750px屏幕宽度设计"
+        },
+        {
+          "name": "适配策略",
+          "value": "弹性布局",
+          "description": "使用弹性布局适配不同屏幕尺寸"
+        },
+        {
+          "name": "像素密度",
+          "value": "2x",
+          "description": "基于2倍像素密度设计，在750px画布下直接使用设计尺寸，无需再乘2倍"
+        }
+      ]
+    },
+    {
+      "name": "文字组合规范",
+      "items": [
+        {
+          "name": "双层文案组合",
+          "items": [
+            {
+              "name": "组合1",
+              "properties": {
+                "titleFontSize": "56px",
+                "titleFontWeight": "Medium",
+                "titleColor": "#333333",
+                "subtitleFontSize": "32px",
+                "subtitleFontWeight": "Regular",
+                "subtitleColor": "#999999",
+                "spacing": "4px"
+              }
+            },
+            {
+              "name": "组合2",
+              "properties": {
+                "titleFontSize": "48px",
+                "titleFontWeight": "Medium",
+                "titleColor": "#333333",
+                "subtitleFontSize": "28px",
+                "subtitleFontWeight": "Regular",
+                "subtitleColor": "#999999",
+                "spacing": "4px"
+              }
+            },
+            {
+              "name": "组合3",
+              "properties": {
+                "titleFontSize": "40px",
+                "titleFontWeight": "Medium",
+                "titleColor": "#333333",
+                "subtitleFontSize": "28px",
+                "subtitleFontWeight": "Regular",
+                "subtitleColor": "#999999",
+                "spacing": "4px"
+              }
+            },
+            {
+              "name": "组合4",
+              "properties": {
+                "titleFontSize": "36px",
+                "titleFontWeight": "Medium",
+                "titleColor": "#333333",
+                "subtitleFontSize": "24px",
+                "subtitleFontWeight": "Regular",
+                "subtitleColor": "#999999",
+                "spacing": "4px"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

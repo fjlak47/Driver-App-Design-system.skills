@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>滴滴货运司机端设计规范</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #222222;
+            background-color: #F8F9FC;
+        }
+        
+        /* 导航栏 */
+        .navbar {
+            background-color: #FFFFFF;
+            box-shadow: 0px 1px 0px 0px #CBD8F2;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 750px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* 重要说明 */
+        .important-note {
+            max-width: 750px;
+            width: 100%;
+            margin: 20px auto;
+            padding: 16px 20px;
+            background-color: #FFF0E8;
+            border-left: 4px solid #FF6435;
+            border-radius: 8px;
+        }
+        
+        .important-note p {
+            font-size: 14px;
+            color: #333333;
+            line-height: 1.5;
+        }
+        
+        .nav-logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: #FF6435;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: #666666;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: #FF6435;
+        }
+        
+        /* 主容器 */
+        .container {
+            max-width: 750px;
+            width: 100%;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        /* 章节样式 */
+        .section {
+            margin-bottom: 60px;
+            background-color: #FFFFFF;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.08);
+        }
+        
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: #222222;
+            border-bottom: 2px solid #FF6435;
+            padding-bottom: 12px;
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            margin-top: 32px;
+            color: #333333;
+        }
+        
+        /* 核心原则 */
+        .principles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        
+        .principle-card {
+            background-color: #F6F8FB;
+            border-radius: 8px;
+            padding: 24px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .principle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.12);
+        }
+        
+        .principle-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #FF6435;
+        }
+        
+        .principle-description {
+            font-size: 14px;
+            color: #666666;
+        }
+        
+        /* 字体样式 */
+        .font-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+        }
+        
+        .font-item {
+            padding: 16px;
+            border-radius: 8px;
+            background-color: #F6F8FB;
+        }
+        
+        .font-label {
+            font-size: 14px;
+            color: #999999;
+            margin-bottom: 8px;
+        }
+        
+        .font-sample {
+            font-size: 16px;
+            color: #333333;
+        }
+        
+        /* 颜色展示 */
+        .colors {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+        }
+        
+        .color-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .color-swatch {
+            width: 100%;
+            height: 80px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            border: 1px solid #EBECF2;
+        }
+        
+        .color-name {
+            font-size: 14px;
+            color: #666666;
+            margin-bottom: 4px;
+        }
+        
+        .color-value {
+            font-size: 14px;
+            color: #999999;
+            font-family: 'Barlow', monospace;
+        }
+        
+        /* 投影展示 */
+        .shadows {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        
+        .shadow-item {
+            padding: 24px;
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .shadow-sample {
+            width: 100%;
+            height: 100px;
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+        
+        .shadow-light {
+            box-shadow: 0px 1px 0px 0px #CBD8F2;
+        }
+        
+        .shadow-medium {
+            box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.08);
+        }
+        
+        .shadow-strong {
+            box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.12);
+        }
+        
+        /* 圆角展示 */
+        .border-radii {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 16px;
+        }
+        
+        .radius-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .radius-sample {
+            width: 80px;
+            height: 80px;
+            background-color: #FF6435;
+            margin-bottom: 8px;
+        }
+        
+        .radius-4 {
+            border-radius: 4px;
+        }
+        
+        .radius-8 {
+            border-radius: 8px;
+        }
+        
+        .radius-16 {
+            border-radius: 16px;
+        }
+        
+        .radius-20 {
+            border-radius: 20px;
+        }
+        
+        .radius-24 {
+            border-radius: 24px;
+        }
+        
+        .radius-32 {
+            border-radius: 32px;
+        }
+        
+        .radius-circle {
+            border-radius: 50%;
+        }
+        
+        /* 间距展示 */
+        .spacings {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 16px;
+        }
+        
+        .spacing-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .spacing-sample {
+            width: 100%;
+            background-color: #FF6435;
+            margin-bottom: 8px;
+        }
+        
+        /* 卡片展示 */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        
+        .card-sample {
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+        
+        .card-shadow {
+            box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.08);
+        }
+        
+        .card-no-border {
+            border: none;
+        }
+        
+        /* 弹窗展示 */
+        .modals {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        
+        .modal-sample {
+            background-color: #FFFFFF;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.12);
+            margin-bottom: 16px;
+        }
+        
+        .modal-confirm {
+            max-width: 600px;
+        }
+        
+        .modal-alert {
+            max-width: 400px;
+        }
+        
+        .modal-bottom {
+            border-radius: 48px 48px 0 0;
+            margin-top: 40px;
+        }
+        
+        /* 图标展示 */
+        .icons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 24px;
+        }
+        
+        .icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .icon-sample {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* 标签展示 */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 16px;
+        }
+        
+        .tag-sample {
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .tag-primary {
+            background-color: #FFF0E8;
+            color: #FF7A37;
+        }
+        
+        .tag-success {
+            background-color: #E8F5F1;
+            color: #00B596;
+        }
+        
+        .tag-warning {
+            background-color: #FFE8E8;
+            color: #FF4340;
+        }
+        
+        .tag-normal {
+            background-color: #F6F8FB;
+            color: #000000;
+        }
+        
+        /* 按钮展示 */
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 16px;
+        }
+        
+        .button-sample {
+            padding: 0 32px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        
+        .button-sample:hover {
+            opacity: 0.8;
+        }
+        
+        .button-primary {
+            background-color: #FF6435;
+            color: #FFFFFF;
+            height: 80px;
+        }
+        
+        .button-secondary {
+            background-color: #F8F9FC;
+            color: #333333;
+            border: 1px solid #CBD8F2;
+            height: 72px;
+        }
+        
+        .button-text {
+            background-color: transparent;
+            color: #FF6435;
+            border: none;
+            height: 40px;
+        }
+        
+        .button-small {
+            background-color: #FF6435;
+            color: #FFFFFF;
+            border-radius: 6px;
+            font-size: 14px;
+            height: 64px;
+        }
+        
+        .button-disabled {
+            background-color: #E1E1E1;
+            color: #999999;
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+        
+        /* 列表展示 */
+        .list-sample {
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+        
+        .list-item {
+            padding: 24px;
+            border-bottom: 1px solid #EFF2F6;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .list-item:last-child {
+            border-bottom: none;
+        }
+        
+        .list-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333333;
+        }
+        
+        .list-subtitle {
+            font-size: 14px;
+            color: #999999;
+            margin-top: 4px;
+        }
+        
+        .list-status {
+            font-size: 16px;
+            font-weight: 600;
+            color: #F87B21;
+        }
+        
+        /* 表单展示 */
+        .form-sample {
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .form-item {
+            margin-bottom: 24px;
+        }
+        
+        .form-label {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333333;
+            margin-bottom: 12px;
+            display: block;
+        }
+        
+        .form-input {
+            width: 100%;
+            height: 80px;
+            padding: 16px;
+            background-color: #F8F9FC;
+            border: 1px solid #CBD8F2;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        .form-error {
+            font-size: 14px;
+            color: #FF2D2D;
+            margin-top: 8px;
+        }
+        
+        /* Tab展示 */
+        .tab-sample {
+            background-color: #FFFFFF;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 24px;
+        }
+        
+        .tab-header {
+            display: flex;
+            border-bottom: 1px solid #EBEBEB;
+            height: 89px;
+        }
+        
+        .tab-item {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 400;
+            color: #333333;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .tab-item.active {
+            font-weight: 600;
+        }
+        
+        .tab-item.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 48px;
+            height: 4px;
+            background-color: #FF6435;
+        }
+        
+        /* 响应式设计 */
+        .responsive-sample {
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        
+        .responsive-device {
+            display: inline-block;
+            border: 1px solid #CBD8F2;
+            border-radius: 24px;
+            padding: 16px;
+            margin: 16px;
+        }
+        
+        .responsive-mobile {
+            width: 375px;
+            height: 667px;
+        }
+        
+        /* 文案组合 */
+        .text-combinations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+        }
+        
+        .text-combination {
+            padding: 16px;
+            border-radius: 8px;
+            background-color: #F6F8FB;
+        }
+        
+        .text-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .text-subtitle {
+            color: #666666;
+        }
+        
+        /* 响应式布局 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .container {
+                margin: 20px auto;
+                padding: 0 16px;
+            }
+            
+            .section {
+                padding: 24px;
+            }
+            
+            .principles,
+            .font-section,
+            .colors,
+            .shadows,
+            .border-radii,
+            .spacings,
+            .cards,
+            .modals,
+            .icons,
+            .text-combinations {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">滴滴货运司机端设计规范</div>
+            <div class="nav-links">
+                <a href="#principles" class="nav-link">核心原则</a>
+                <a href="#fonts" class="nav-link">字体</a>
+                <a href="#colors" class="nav-link">颜色</a>
+                <a href="#shadows" class="nav-link">投影</a>
+                <a href="#border-radius" class="nav-link">圆角</a>
+                <a href="#spacing" class="nav-link">间距</a>
+                <a href="#structure" class="nav-link">通用结构</a>
+                <a href="#components" class="nav-link">组件</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 重要说明 -->
+    <div class="important-note">
+        <p><strong>重要说明：</strong>本设计规范基于 750px 宽度画布制定，所有字号、间距、尺寸等参数均针对750px宽度画布优化，应用时应保持750px宽度画布（需自适应大小）。</p>
+    </div>
+
+    <!-- 主容器 -->
+    <div class="container">
+        <!-- 核心原则 -->
+        <section class="section" id="principles">
+            <h2 class="section-title">核心原则</h2>
+            <div class="principles">
+                <div class="principle-card">
+                    <div class="principle-title">清晰</div>
+                    <div class="principle-description">信息层次分明，重点明确</div>
+                </div>
+                <div class="principle-card">
+                    <div class="principle-title">高效</div>
+                    <div class="principle-description">操作流程简洁，减少司机理解和操作成本</div>
+                </div>
+                <div class="principle-card">
+                    <div class="principle-title">统一</div>
+                    <div class="principle-description">颜色、字体、组件状态与结构保持一致</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 字体 -->
+        <section class="section" id="fonts">
+            <h2 class="section-title">字体</h2>
+            
+            <h3 class="section-subtitle">字体家族</h3>
+            <div class="font-section">
+                <div class="font-item">
+                    <div class="font-label">中文字体</div>
+                    <div class="font-sample" style="font-family: 'PingFang SC'">PingFang SC</div>
+                </div>
+                <div class="font-item">
+                    <div class="font-label">英文字体</div>
+                    <div class="font-sample" style="font-family: 'Barlow'">Barlow</div>
+                </div>
+            </div>
+            
+            <h3 class="section-subtitle">字号</h3>
+            <div class="font-section">
+                <div class="font-item">
+                    <div class="font-label">大标题</div>
+                    <div class="font-sample" style="font-size: 48px;">48px</div>
+                </div>
+                <div class="font-item">
+                    <div class="font-label">小标题</div>
+                    <div class="font-sample" style="font-size: 40px;">40px</div>
+                </div>
+                <div class="font-item">
+                    <div class="font-label">正文</div>
+                    <div class="font-sample" style="font-size: 36px;">36px</div>
+                </div>
+                <div class="font-item">
+                    <div class="font-label">辅助文字</div>
+                    <div class="font-sample" style="font-size: 28px;">28px</div>
+                </div>
+                <div class="font-item">
+                    <div class="font-label">小字</div>
+                    <div class="font-sample" style="font-size: 24px;">24px</div>
+                </div>
+                <div class="font-item">
+                    <div class="font-label">微小文字</div>
+                    <div class="font-sample" style="font-size: 20px;">20px</div>
+                </div>
+            </div>
+            
+            <h3 class="section-subtitle">字重</h3>
+            <div class="font-section">
+                <div class="font-item">
+                    <div class="font-label">常规</div>
+                    <div class="font-sample" style="font-weight: 400;">Regular</div>
+                </div>
+                <div class="font-item">
+                    <div class="font-label">中等</div>
+                    <div class="font-sample" style="font-weight: 500;">Medium</div>
+                </div>
+                <div class="font-item">
+                    <div class="font-label">中粗</div>
+                    <div class="font-sample" style="font-weight: 600;">Semibold</div>
+                </div>
+                <div class="font-item">
+                    <div class="font-label">粗体</div>
+                    <div class="font-sample" style="font-weight: 700;">Bold</div>
+                </div>
+            </div>
+            
+            <h3 class="section-subtitle">行高</h3>
+            <div class="font-section">
+                <div class="font-item">
+                    <div class="font-label">大标题</div>
+                    <div class="font-sample" style="line-height: 72px;">72px</div>
+                </div>
+                <div class="font-item">
+                    <div class="font-label">小标题</div>
+                    <div class="font-sample" style="line-height: 60px;">60px</div>
+                </div>
+                <div class="font-item">
+                    <div class="font-label">正文</div>
+                    <div class="font-sample" style="line-height: 54px;">54px</div>
+                </div>
+                <div class="font-item">
+                    <div class="font-label">辅助文字</div>
+                    <div class="font-sample" style="line-height: 42px;">42px</div>
+                </div>
+                <div class="font-item">
+                    <div class="font-label">小字</div>
+                    <div class="font-sample" style="line-height: 36px;">36px</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 颜色 -->
+        <section class="section" id="colors">
+            <h2 class="section-title">颜色</h2>
+            
+            <h3 class="section-subtitle">品牌与强调</h3>
+            <div class="colors">
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #12C79F;"></div>
+                    <div class="color-name">主品牌色</div>
+                    <div class="color-value">#12C79F</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #FF6435;"></div>
+                    <div class="color-name">高亮橙</div>
+                    <div class="color-value">#FF6435</div>
+                </div>
+            </div>
+            
+            <h3 class="section-subtitle">功能色</h3>
+            <div class="colors">
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #2DBB7A;"></div>
+                    <div class="color-name">成功</div>
+                    <div class="color-value">#2DBB7A</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #FF9F0E;"></div>
+                    <div class="color-name">警告</div>
+                    <div class="color-value">#FF9F0E</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #FF4340;"></div>
+                    <div class="color-name">错误</div>
+                    <div class="color-value">#FF4340</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #168CFF;"></div>
+                    <div class="color-name">导航</div>
+                    <div class="color-value">#168CFF</div>
+                </div>
+            </div>
+            
+            <h3 class="section-subtitle">背景</h3>
+            <div class="colors">
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #F8F9FC;"></div>
+                    <div class="color-name">页面背景</div>
+                    <div class="color-value">#F8F9FC</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #F6F8FB;"></div>
+                    <div class="color-name">次要浅灰背景</div>
+                    <div class="color-value">#F6F8FB</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #193458;"></div>
+                    <div class="color-name">深蓝背景</div>
+                    <div class="color-value">#193458</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #EBECF2;"></div>
+                    <div class="color-name">分割线</div>
+                    <div class="color-value">#EBECF2</div>
+                </div>
+            </div>
+            
+            <h3 class="section-subtitle">文字</h3>
+            <div class="colors">
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #222222;"></div>
+                    <div class="color-name">主文字</div>
+                    <div class="color-value">#222222</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #666666;"></div>
+                    <div class="color-name">次文字</div>
+                    <div class="color-value">#666666</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #999999;"></div>
+                    <div class="color-name">辅助文字</div>
+                    <div class="color-value">#999999</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #CCCCCC;"></div>
+                    <div class="color-name">禁用文字</div>
+                    <div class="color-value">#CCCCCC</div>
+                </div>
+            </div>
+            
+            <h3 class="section-subtitle">边框与基础色</h3>
+            <div class="colors">
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #CBD8F2;"></div>
+                    <div class="color-name">主边框</div>
+                    <div class="color-value">#CBD8F2</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #EBECF2;"></div>
+                    <div class="color-name">次边框</div>
+                    <div class="color-value">#EBECF2</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #FFFFFF;"></div>
+                    <div class="color-name">白色</div>
+                    <div class="color-value">#FFFFFF</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #000000;"></div>
+                    <div class="color-name">黑色</div>
+                    <div class="color-value">#000000</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #1A1A1A;"></div>
+                    <div class="color-name">深灰</div>
+                    <div class="color-value">#1A1A1A</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 投影 -->
+        <section class="section" id="shadows">
+            <h2 class="section-title">投影</h2>
+            <div class="shadows">
+                <div class="shadow-item">
+                    <div class="shadow-sample shadow-light"></div>
+                    <div class="shadow-name">轻微投影</div>
+                    <div class="shadow-value">0px 1px 0px 0px #CBD8F2</div>
+                </div>
+                <div class="shadow-item">
+                    <div class="shadow-sample shadow-medium"></div>
+                    <div class="shadow-name">中等投影</div>
+                    <div class="shadow-value">0px 4px 12px 0px rgba(0, 0, 0, 0.08)</div>
+                </div>
+                <div class="shadow-item">
+                    <div class="shadow-sample shadow-strong"></div>
+                    <div class="shadow-name">强烈投影</div>
+                    <div class="shadow-value">0px 8px 24px 0px rgba(0, 0, 0, 0.12)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 圆角 -->
+        <section class="section" id="border-radius">
+            <h2 class="section-title">圆角</h2>
+            <div class="border-radii">
+                <div class="radius-item">
+                    <div class="radius-sample radius-4"></div>
+                    <div class="radius-name">微小圆角</div>
+                    <div class="radius-value">4px</div>
+                </div>
+                <div class="radius-item">
+                    <div class="radius-sample radius-8"></div>
+                    <div class="radius-name">小圆角</div>
+                    <div class="radius-value">8px</div>
+                </div>
+                <div class="radius-item">
+                    <div class="radius-sample radius-16"></div>
+                    <div class="radius-name">中圆角</div>
+                    <div class="radius-value">16px</div>
+                </div>
+                <div class="radius-item">
+                    <div class="radius-sample radius-20"></div>
+                    <div class="radius-name">中大圆角</div>
+                    <div class="radius-value">20px</div>
+                </div>
+                <div class="radius-item">
+                    <div class="radius-sample radius-24"></div>
+                    <div class="radius-name">大圆角</div>
+                    <div class="radius-value">24px</div>
+                </div>
+                <div class="radius-item">
+                    <div class="radius-sample radius-32"></div>
+                    <div class="radius-name">超大圆角</div>
+                    <div class="radius-value">32px</div>
+                </div>
+                <div class="radius-item">
+                    <div class="radius-sample radius-circle"></div>
+                    <div class="radius-name">圆形</div>
+                    <div class="radius-value">50%</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 间距 -->
+        <section class="section" id="spacing">
+            <h2 class="section-title">间距</h2>
+            <div class="spacings">
+                <div class="spacing-item">
+                    <div class="spacing-sample" style="height: 2px;"></div>
+                    <div class="spacing-name">极微小</div>
+                    <div class="spacing-value">2px</div>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-sample" style="height: 4px;"></div>
+                    <div class="spacing-name">微小</div>
+                    <div class="spacing-value">4px</div>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-sample" style="height: 8px;"></div>
+                    <div class="spacing-name">小</div>
+                    <div class="spacing-value">8px</div>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-sample" style="height: 12px;"></div>
+                    <div class="spacing-name">中小组</div>
+                    <div class="spacing-value">12px</div>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-sample" style="height: 16px;"></div>
+                    <div class="spacing-name">中等</div>
+                    <div class="spacing-value">16px</div>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-sample" style="height: 20px;"></div>
+                    <div class="spacing-name">中大</div>
+                    <div class="spacing-value">20px</div>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-sample" style="height: 24px;"></div>
+                    <div class="spacing-name">大</div>
+                    <div class="spacing-value">24px</div>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-sample" style="height: 32px;"></div>
+                    <div class="spacing-name">超大</div>
+                    <div class="spacing-value">32px</div>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-sample" style="height: 40px;"></div>
+                    <div class="spacing-name">特大</div>
+                    <div class="spacing-value">40px</div>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-sample" style="height: 48px;"></div>
+                    <div class="spacing-name">巨间距</div>
+                    <div class="spacing-value">48px</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 通用结构 -->
+        <section class="section" id="structure">
+            <h2 class="section-title">通用结构</h2>
+            
+            <h3 class="section-subtitle">页面与内容容器</h3>
+            <div class="responsive-sample">
+                <div class="responsive-device responsive-mobile" style="background-color: #F8F9FC;">
+                    <div style="background-color: #FFFFFF; border-radius: 16px; margin: 24px; padding: 24px;">
+                        <div style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">内容区</div>
+                        <div style="font-size: 14px; color: #666666;">页面容器使用移动端 750px 设计宽度语义</div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="section-subtitle">卡片</h3>
+            <div class="cards">
+                <div class="card-item">
+                    <div class="card-sample">
+                        <div style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">基础卡片</div>
+                        <div style="font-size: 14px; color: #666666;">白底、8px 到 24px 圆角、24px 内边距</div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card-sample card-shadow">
+                        <div style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">带阴影卡片</div>
+                        <div style="font-size: 14px; color: #666666;">白底 + 中等投影</div>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <div class="card-sample card-no-border">
+                        <div style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">无边框卡片</div>
+                        <div style="font-size: 14px; color: #666666;">白底、无边框、24px 内边距、下间距 16px</div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="section-subtitle">弹窗</h3>
+            <div class="modals">
+                <div class="modal-item">
+                    <div class="modal-sample modal-confirm">
+                        <div style="font-size: 18px; font-weight: 600; margin-bottom: 16px;">确认弹窗</div>
+                        <div style="font-size: 14px; color: #666666; margin-bottom: 24px;">宽 600px、白底、16px 圆角、32px 内边距、强投影</div>
+                        <div style="display: flex; gap: 16px; justify-content: flex-end;">
+                            <div class="button-sample button-secondary" style="height: 48px; font-size: 14px;">取消</div>
+                            <div class="button-sample button-primary" style="height: 48px; font-size: 14px;">确认</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-item">
+                    <div class="modal-sample modal-alert">
+                        <div style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">提示弹窗</div>
+                        <div style="font-size: 14px; color: #666666; margin-bottom: 24px;">宽 400px、白底、16px 圆角、24px 内边距、强投影</div>
+                        <div style="display: flex; justify-content: center;">
+                            <div class="button-sample button-primary" style="height: 48px; font-size: 14px;">确定</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-item">
+                    <div class="modal-sample modal-bottom">
+                        <div style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">半弹窗</div>
+                        <div style="font-size: 14px; color: #666666; margin-bottom: 24px;">底部吸附、顶部圆角 48px 48px 0 0</div>
+                        <div style="border-top: 1px solid #EBECF2; padding-top: 16px; margin-top: 24px;">
+                            <div class="button-sample button-primary" style="width: 100%; height: 48px; font-size: 14px;">确认</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 组件 -->
+        <section class="section" id="components">
+            <h2 class="section-title">组件</h2>
+            
+            <h3 class="section-subtitle">图标</h3>
+            <div class="icons">
+                <div class="icon-item">
+                    <div class="icon-sample" style="color: #333333;">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 8L8 24L24 40L40 24L24 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="icon-name">主图标色</div>
+                    <div class="icon-value">#333333</div>
+                </div>
+                <div class="icon-item">
+                    <div class="icon-sample" style="color: #666666;">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 8L8 24L24 40L40 24L24 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="icon-name">次图标色</div>
+                    <div class="icon-value">#666666</div>
+                </div>
+                <div class="icon-item">
+                    <div class="icon-sample" style="color: #999999;">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 8L8 24L24 40L40 24L24 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="icon-name">辅助图标色</div>
+                    <div class="icon-value">#999999</div>
+                </div>
+                <div class="icon-item">
+                    <div class="icon-sample" style="color: #FF6435;">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 8L8 24L24 40L40 24L24 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="icon-name">强调图标色</div>
+                    <div class="icon-value">#FF6435</div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 24px; padding: 16px; background-color: #F6F8FB; border-radius: 8px;">
+                <p style="font-size: 14px; color: #666666; margin: 0;"><strong>图标资源：</strong>可从 IconPark 图标库引用 - <a href="https://iconpark.oceanengine.com/official" target="_blank" style="color: #FF6435; text-decoration: none;">https://iconpark.oceanengine.com/official</a></p>
+            </div>
+            
+            <h3 class="section-subtitle">标签</h3>
+            <div class="tags">
+                <div class="tag-sample tag-primary">主色标签</div>
+                <div class="tag-sample tag-success">成功标签</div>
+                <div class="tag-sample tag-warning">警示标签</div>
+                <div class="tag-sample tag-normal">常规标签</div>
+            </div>
+            
+            <h3 class="section-subtitle">按钮</h3>
+            <div class="buttons">
+                <div class="button-sample button-primary">全局主按钮 A</div>
+                <div class="button-sample button-secondary">次要按钮</div>
+                <div class="button-sample button-text">文本按钮</div>
+                <div class="button-sample button-small">小型按钮</div>
+                <div class="button-sample button-primary button-disabled">禁用按钮</div>
+            </div>
+            
+            <h3 class="section-subtitle">列表</h3>
+            <div class="list-sample">
+                <div class="list-item">
+                    <div>
+                        <div class="list-title">订单号：20240324001</div>
+                        <div class="list-subtitle">北京市朝阳区 → 北京市海淀区</div>
+                    </div>
+                    <div class="list-status">进行中</div>
+                </div>
+                <div class="list-item">
+                    <div>
+                        <div class="list-title">订单号：20240324002</div>
+                        <div class="list-subtitle">北京市丰台区 → 北京市东城区</div>
+                    </div>
+                    <div class="list-status">已完成</div>
+                </div>
+            </div>
+            
+            <h3 class="section-subtitle">表单</h3>
+            <div class="form-sample">
+                <div class="form-item">
+                    <label class="form-label">姓名</label>
+                    <input type="text" class="form-input" placeholder="请输入姓名">
+                </div>
+                <div class="form-item">
+                    <label class="form-label">手机号</label>
+                    <input type="tel" class="form-input" placeholder="请输入手机号">
+                    <div class="form-error">请输入正确的手机号</div>
+                </div>
+            </div>
+            
+            <h3 class="section-subtitle">Tab</h3>
+            <div class="tab-sample">
+                <div class="tab-header">
+                    <div class="tab-item active">待接单</div>
+                    <div class="tab-item">进行中</div>
+                    <div class="tab-item">已完成</div>
+                </div>
+                <div style="padding: 24px;">
+                    <div style="font-size: 14px; color: #666666;">Tab 内容区域</div>
+                </div>
+            </div>
+            
+            <h3 class="section-subtitle">文案组合</h3>
+            <div class="text-combinations">
+                <div class="text-combination">
+                    <div class="text-title" style="font-size: 56px;">大标题</div>
+                    <div class="text-subtitle" style="font-size: 32px;">副标题</div>
+                </div>
+                <div class="text-combination">
+                    <div class="text-title" style="font-size: 48px;">大标题</div>
+                    <div class="text-subtitle" style="font-size: 28px;">副标题</div>
+                </div>
+                <div class="text-combination">
+                    <div class="text-title" style="font-size: 40px;">大标题</div>
+                    <div class="text-subtitle" style="font-size: 28px;">副标题</div>
+                </div>
+                <div class="text-combination">
+                    <div class="text-title" style="font-size: 36px;">大标题</div>
+                    <div class="text-subtitle" style="font-size: 24px;">副标题</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
