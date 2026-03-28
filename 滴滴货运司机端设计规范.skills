@@ -781,6 +781,22 @@
       "name": "基础组件规范",
       "items": [
         {
+          "name": "卡片组件规范 (Card)",
+          "items": [
+            {
+              "name": "基础样式",
+              "properties": {
+                "boxShadow": "0px 1px 12px rgba(203, 216, 242, 0.12)",
+                "borderRadius": "24px",
+                "backgroundColor": "#FFFFFF",
+                "padding": "24px",
+                "marginBottom": "16px"
+              },
+              "description": "所有内容卡片统一使用的基础样式"
+            }
+          ]
+        },
+        {
           "name": "弹窗",
           "items": [
             {
