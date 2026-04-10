@@ -1,10 +1,10 @@
 {
   "name": "滴滴货运司机端设计规范",
   "description": "滴滴货运司机端的完整设计规范，包括颜色、字体、组件等设计元素",
-  "version": "1.3.0",
+  "version": "1.1.0",
   "author": "MasterGo",
   "createdAt": "2026-03-16",
-  "updatedAt": "2026-03-16",
+  "updatedAt": "2026-04-03",
   "corePrinciples": [
     {
       "name": "清晰",
@@ -35,6 +35,11 @@
               "name": "英文字体",
               "value": "Barlow",
               "description": "主要英文字体"
+            },
+            {
+              "name": "全局字体栈",
+              "value": "PingFang SC, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Microsoft YaHei', sans-serif",
+              "description": "全局字体栈，确保在不同设备上的一致性"
             },
             {
               "name": "字体大小",
@@ -789,8 +794,10 @@
                 "boxShadow": "0px 1px 12px rgba(203, 216, 242, 0.12)",
                 "borderRadius": "24px",
                 "backgroundColor": "#FFFFFF",
-                "padding": "24px",
-                "marginBottom": "16px"
+                "padding": "12px",
+                "marginBottom": "10px",
+                "firstCardMarginTop": "10px",
+                "pageHorizontalPadding": "16px"
               },
               "description": "所有内容卡片统一使用的基础样式"
             }
@@ -1154,8 +1161,8 @@
       "items": [
         {
           "name": "设计尺寸",
-          "value": "750px",
-          "description": "基于移动端750px屏幕宽度设计"
+          "value": "375px",
+          "description": "基于移动端375px屏幕宽度设计"
         },
         {
           "name": "适配策略",
@@ -1164,8 +1171,18 @@
         },
         {
           "name": "像素密度",
-          "value": "2x",
-          "description": "基于2倍像素密度设计，在750px画布下直接使用设计尺寸，无需再乘2倍"
+          "value": "1x",
+          "description": "基于1倍像素密度设计，在375px画布下直接使用设计尺寸"
+        },
+        {
+          "name": "MobileFrame边框",
+          "value": "outline outline-[8px] outline-[#1A1A1A]",
+          "description": "使用outline而非border，避免侵占内部空间"
+        },
+        {
+          "name": "滚动条",
+          "value": "隐藏",
+          "description": "所有页面隐藏滚动条，保持滚动功能"
         }
       ]
     },
