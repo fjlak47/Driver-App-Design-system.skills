@@ -1,10 +1,10 @@
 {
   "name": "滴滴货运司机端设计规范",
   "description": "滴滴货运司机端的完整设计规范，包括颜色、字体、组件等设计元素",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "MasterGo",
   "createdAt": "2026-03-16",
-  "updatedAt": "2026-04-03",
+  "updatedAt": "2026-04-10",
   "corePrinciples": [
     {
       "name": "清晰",
@@ -46,32 +46,32 @@
               "items": [
                 {
                   "name": "大标题",
-                  "value": "48px",
+                  "value": "24px",
                   "description": "页面大标题"
                 },
                 {
                   "name": "小标题",
-                  "value": "40px",
+                  "value": "20px",
                   "description": "页面小标题"
                 },
                 {
                   "name": "正文",
-                  "value": "36px",
+                  "value": "18px",
                   "description": "正文文字"
                 },
                 {
                   "name": "辅助文字",
-                  "value": "28px",
+                  "value": "14px",
                   "description": "辅助说明文字"
                 },
                 {
                   "name": "小字",
-                  "value": "24px",
+                  "value": "12px",
                   "description": "小字体文字"
                 },
                 {
                   "name": "微小文字",
-                  "value": "20px",
+                  "value": "10px",
                   "description": "微小说明文字"
                 }
               ]
@@ -106,27 +106,27 @@
               "items": [
                 {
                   "name": "大标题",
-                  "value": "72px",
+                  "value": "36px",
                   "description": "大标题行高"
                 },
                 {
                   "name": "小标题",
-                  "value": "60px",
+                  "value": "30px",
                   "description": "小标题行高"
                 },
                 {
                   "name": "正文",
-                  "value": "54px",
+                  "value": "27px",
                   "description": "正文行高"
                 },
                 {
                   "name": "辅助文字",
-                  "value": "42px",
+                  "value": "21px",
                   "description": "辅助文字行高"
                 },
                 {
                   "name": "小字",
-                  "value": "36px",
+                  "value": "18px",
                   "description": "小字行高"
                 }
               ]
@@ -288,32 +288,32 @@
           "items": [
             {
               "name": "微小圆角",
-              "value": "4px",
+              "value": "2px",
               "description": "层级较多情况标签类型适用"
             },
             {
               "name": "小圆角",
-              "value": "8px",
+              "value": "4px",
               "description": "标签/小组件类型适用"
             },
             {
               "name": "中圆角",
-              "value": "16px",
+              "value": "8px",
               "description": "页面标准卡片中图片类容器"
             },
             {
               "name": "中大圆角",
-              "value": "20px",
+              "value": "10px",
               "description": "页面标准卡片中全局按钮类容器"
             },
             {
               "name": "大圆角",
-              "value": "24px",
+              "value": "12px",
               "description": "页面标准卡片内子卡片（670px）"
             },
             {
               "name": "超大圆角",
-              "value": "32px",
+              "value": "16px",
               "description": "页面标准卡片容器（710px）"
             },
             {
@@ -329,23 +329,23 @@
             {
               "name": "标题组合",
               "properties": {
-                "titleFontSize": "36px",
+                "titleFontSize": "18px",
                 "titleFontWeight": "Semibold",
                 "titleColor": "#333333",
-                "subtitleFontSize": "24px",
+                "subtitleFontSize": "12px",
                 "subtitleFontWeight": "Regular",
                 "subtitleColor": "#666666",
-                "lineHeight": "54px"
+                "lineHeight": "27px"
               }
             },
             {
               "name": "正文组合",
               "properties": {
-                "fontSize": "28px",
+                "fontSize": "14px",
                 "fontWeight": "Regular",
                 "color": "#333333",
-                "lineHeight": "42px",
-                "paragraphSpacing": "16px"
+                "lineHeight": "21px",
+                "paragraphSpacing": "8px"
               }
             }
           ]
@@ -360,52 +360,52 @@
           "items": [
             {
               "name": "极微小间距",
-              "value": "2px",
+              "value": "1px",
               "description": "极微小间距"
             },
             {
               "name": "微小间距",
-              "value": "4px",
+              "value": "2px",
               "description": "微小间距"
             },
             {
               "name": "小间距",
-              "value": "8px",
+              "value": "4px",
               "description": "组件内部小间距"
             },
             {
               "name": "中小组间距",
-              "value": "12px",
+              "value": "6px",
               "description": "组件间中小组间距"
             },
             {
               "name": "中等间距",
-              "value": "16px",
+              "value": "8px",
               "description": "组件间中等间距"
             },
             {
               "name": "中大间距",
-              "value": "20px",
+              "value": "10px",
               "description": "模块间中大间距"
             },
             {
               "name": "大间距",
-              "value": "24px",
+              "value": "12px",
               "description": "模块间大间距"
             },
             {
               "name": "超大间距",
-              "value": "32px",
+              "value": "16px",
               "description": "区域间超大间距"
             },
             {
               "name": "特大间距",
-              "value": "40px",
+              "value": "20px",
               "description": "页面级特大间距"
             },
             {
               "name": "巨间距",
-              "value": "48px",
+              "value": "24px",
               "description": "页面级巨间距"
             }
           ]
@@ -416,19 +416,19 @@
             {
               "name": "页面容器",
               "properties": {
-                "paddingHorizontal": "24px",
-                "paddingTop": "100px",
-                "paddingBottom": "32px",
-                "maxWidth": "750px",
+                "paddingHorizontal": "12px",
+                "paddingTop": "50px",
+                "paddingBottom": "16px",
+                "maxWidth": "375px",
                 "marginHorizontal": "auto"
               }
             },
             {
               "name": "内容容器",
               "properties": {
-                "padding": "24px",
+                "padding": "12px",
                 "backgroundColor": "#FFFFFF",
-                "borderRadius": "8px"
+                "borderRadius": "4px"
               }
             }
           ]
@@ -440,10 +440,10 @@
               "name": "模态弹窗",
               "properties": {
                 "backgroundColor": "#FFFFFF",
-                "borderRadius": "16px",
-                "padding": "32px",
+                "borderRadius": "8px",
+                "padding": "16px",
                 "shadow": "0px 8px 24px 0px rgba(0, 0, 0, 0.12)",
-                "maxWidth": "600px",
+                "maxWidth": "300px",
                 "maxHeight": "80%",
                 "zIndex": "1000"
               }
@@ -460,20 +460,20 @@
                 "zIndex": "1000",
                 "contentArea": {
                   "backgroundColor": "#F8F9FC",
-                  "margin": "28px 28px 16px",
-                  "padding": "47px 235px",
-                  "borderRadius": "24px"
+                  "margin": "14px",
+                  "padding": "23.5px",
+                  "borderRadius": "12px"
                 },
                 "buttonArea": {
-                  "padding": "16px 24px",
-                  "gap": "20px"
+                  "padding": "8px",
+                  "gap": "10px"
                 },
                 "footerIndicator": {
-                  "height": "50px",
-                  "indicatorWidth": "268px",
-                  "indicatorHeight": "10px",
+                  "height": "25px",
+                  "indicatorWidth": "134px",
+                  "indicatorHeight": "5px",
                   "indicatorColor": "#333333",
-                  "indicatorBorderRadius": "200px"
+                  "indicatorBorderRadius": "100px"
                 }
               }
             }
@@ -486,30 +486,30 @@
               "name": "基础卡片",
               "properties": {
                 "backgroundColor": "#FFFFFF",
-                "borderRadius": "8px",
+                "borderRadius": "4px",
                 "shadow": "0px 1px 0px 0px #CBD8F2",
-                "padding": "24px",
-                "marginBottom": "16px"
+                "padding": "12px",
+                "marginBottom": "8px"
               }
             },
             {
               "name": "带阴影卡片",
               "properties": {
                 "backgroundColor": "#FFFFFF",
-                "borderRadius": "8px",
+                "borderRadius": "4px",
                 "shadow": "0px 4px 12px 0px rgba(0, 0, 0, 0.08)",
-                "padding": "24px",
-                "marginBottom": "16px"
+                "padding": "12px",
+                "marginBottom": "8px"
               }
             },
             {
               "name": "无边框卡片",
               "properties": {
                 "backgroundColor": "#FFFFFF",
-                "borderRadius": "8px",
+                "borderRadius": "4px",
                 "border": "none",
-                "padding": "24px",
-                "marginBottom": "16px"
+                "padding": "12px",
+                "marginBottom": "8px"
               }
             }
           ]
@@ -532,22 +532,22 @@
               "items": [
                 {
                   "name": "小图标",
-                  "value": "24px",
+                  "value": "12px",
                   "description": "小尺寸图标"
                 },
                 {
                   "name": "中等图标",
-                  "value": "32px",
+                  "value": "16px",
                   "description": "中等尺寸图标"
                 },
                 {
                   "name": "大图标",
-                  "value": "48px",
+                  "value": "24px",
                   "description": "大尺寸图标"
                 },
                 {
                   "name": "超大图标",
-                  "value": "64px",
+                  "value": "32px",
                   "description": "超大尺寸图标"
                 }
               ]
@@ -587,11 +587,11 @@
               "properties": {
                 "backgroundColor": "#FFF6F1",
                 "textColor": "#FF7A37",
-                "borderRadius": "8px",
-                "padding": "6px 12px",
-                "fontSize": "24px",
+                "borderRadius": "4px",
+                "padding": "3px",
+                "fontSize": "12px",
                 "fontWeight": "Medium",
-                "height": "40px"
+                "height": "20px"
               }
             },
             {
@@ -599,11 +599,11 @@
               "properties": {
                 "backgroundColor": "rgba(0, 181, 150, 0.05)",
                 "textColor": "#00B596",
-                "borderRadius": "8px",
-                "padding": "6px 12px",
-                "fontSize": "24px",
+                "borderRadius": "4px",
+                "padding": "3px",
+                "fontSize": "12px",
                 "fontWeight": "Medium",
-                "height": "40px"
+                "height": "20px"
               }
             },
             {
@@ -611,11 +611,11 @@
               "properties": {
                 "backgroundColor": "rgba(255, 67, 64, 0.08)",
                 "textColor": "#FF4340",
-                "borderRadius": "8px",
-                "padding": "6px 12px",
-                "fontSize": "24px",
+                "borderRadius": "4px",
+                "padding": "3px",
+                "fontSize": "12px",
                 "fontWeight": "Medium",
-                "height": "40px"
+                "height": "20px"
               }
             },
             {
@@ -623,11 +623,11 @@
               "properties": {
                 "backgroundColor": "#F1F1F1",
                 "textColor": "#000000",
-                "borderRadius": "8px",
-                "padding": "6px 12px",
-                "fontSize": "24px",
+                "borderRadius": "4px",
+                "padding": "3px",
+                "fontSize": "12px",
                 "fontWeight": "Regular",
-                "height": "40px"
+                "height": "20px"
               }
             }
           ]
@@ -643,11 +643,11 @@
                   "properties": {
                     "backgroundColor": "#FF6435",
                     "textColor": "#FFFFFF",
-                    "borderRadius": "8px",
-                    "fontSize": "36px",
+                    "borderRadius": "4px",
+                    "fontSize": "18px",
                     "fontWeight": "Medium",
-                    "padding": "16px 32px",
-                    "height": "80px",
+                    "padding": "8px",
+                    "height": "40px",
                     "states": {
                       "hover": {
                         "backgroundColor": "#FF6435",
@@ -666,11 +666,11 @@
                   "properties": {
                     "backgroundColor": "#FF6435",
                     "textColor": "#FFFFFF",
-                    "borderRadius": "8px",
-                    "fontSize": "32px",
+                    "borderRadius": "4px",
+                    "fontSize": "16px",
                     "fontWeight": "Medium",
-                    "padding": "16px 32px",
-                    "height": "72px",
+                    "padding": "8px",
+                    "height": "36px",
                     "states": {
                       "hover": {
                         "backgroundColor": "#FF6435",
@@ -694,12 +694,12 @@
                   "properties": {
                     "backgroundColor": "#F8F9FC",
                     "textColor": "#333333",
-                    "borderRadius": "8px",
+                    "borderRadius": "4px",
                     "border": "1px solid #CBD8F2",
-                    "fontSize": "36px",
+                    "fontSize": "18px",
                     "fontWeight": "Medium",
-                    "padding": "16px 32px",
-                    "height": "80px",
+                    "padding": "8px",
+                    "height": "40px",
                     "states": {
                       "hover": {
                         "backgroundColor": "#F8F9FC",
@@ -719,9 +719,9 @@
                   "properties": {
                     "backgroundColor": "transparent",
                     "textColor": "#FF6435",
-                    "fontSize": "36px",
+                    "fontSize": "18px",
                     "fontWeight": "Medium",
-                    "padding": "8px 16px",
+                    "padding": "4px",
                     "states": {
                       "hover": {
                         "opacity": "0.7"
@@ -738,11 +738,11 @@
                   "properties": {
                     "backgroundColor": "#FF6435",
                     "textColor": "#FFFFFF",
-                    "borderRadius": "6px",
-                    "fontSize": "28px",
+                    "borderRadius": "3px",
+                    "fontSize": "14px",
                     "fontWeight": "Medium",
-                    "padding": "12px 24px",
-                    "height": "64px",
+                    "padding": "6px",
+                    "height": "32px",
                     "states": {
                       "hover": {
                         "backgroundColor": "#FF6435",
@@ -792,7 +792,7 @@
               "name": "基础样式",
               "properties": {
                 "boxShadow": "0px 1px 12px rgba(203, 216, 242, 0.12)",
-                "borderRadius": "24px",
+                "borderRadius": "12px",
                 "backgroundColor": "#FFFFFF",
                 "padding": "12px",
                 "marginBottom": "10px",
@@ -809,31 +809,31 @@
             {
               "name": "确认弹窗",
               "properties": {
-                "width": "600px",
+                "width": "300px",
                 "backgroundColor": "#FFFFFF",
-                "borderRadius": "16px",
-                "padding": "32px",
+                "borderRadius": "8px",
+                "padding": "16px",
                 "shadow": "0px 8px 24px 0px rgba(0, 0, 0, 0.12)",
-                "titleFontSize": "36px",
+                "titleFontSize": "18px",
                 "titleFontWeight": "Semibold",
                 "titleColor": "#333333",
-                "contentFontSize": "28px",
+                "contentFontSize": "14px",
                 "contentColor": "#666666",
                 "buttonArea": {
-                  "paddingTop": "24px",
-                  "gap": "16px"
+                  "paddingTop": "12px",
+                  "gap": "8px"
                 }
               }
             },
             {
               "name": "提示弹窗",
               "properties": {
-                "width": "400px",
+                "width": "200px",
                 "backgroundColor": "#FFFFFF",
-                "borderRadius": "16px",
-                "padding": "24px",
+                "borderRadius": "8px",
+                "padding": "12px",
                 "shadow": "0px 8px 24px 0px rgba(0, 0, 0, 0.12)",
-                "contentFontSize": "28px",
+                "contentFontSize": "14px",
                 "contentColor": "#333333",
                 "autoClose": "3000ms"
               }
@@ -852,20 +852,20 @@
             "zIndex": "1000",
             "contentArea": {
               "backgroundColor": "#F8F9FC",
-              "margin": "28px 28px 16px",
-              "padding": "47px 235px",
-              "borderRadius": "24px"
+              "margin": "14px",
+              "padding": "23.5px",
+              "borderRadius": "12px"
             },
             "buttonArea": {
-              "padding": "16px 24px",
-              "gap": "20px"
+              "padding": "8px",
+              "gap": "10px"
             },
             "footerIndicator": {
-              "height": "50px",
-              "indicatorWidth": "268px",
-              "indicatorHeight": "10px",
+              "height": "25px",
+              "indicatorWidth": "134px",
+              "indicatorHeight": "5px",
               "indicatorColor": "#333333",
-              "indicatorBorderRadius": "200px"
+              "indicatorBorderRadius": "100px"
             }
           }
         },
@@ -876,27 +876,27 @@
               "name": "基础列表",
               "properties": {
                 "backgroundColor": "#FFFFFF",
-                "borderRadius": "8px",
-                "itemHeight": "88px",
-                "itemPadding": "24px",
+                "borderRadius": "4px",
+                "itemHeight": "44px",
+                "itemPadding": "12px",
                 "dividerColor": "#EFF2F6",
-                "dividerHeight": "1px"
+                "dividerHeight": "0.5px"
               }
             },
             {
               "name": "列表项组合",
               "properties": {
-                "titleFontSize": "32px",
+                "titleFontSize": "16px",
                 "titleFontWeight": "Semibold",
                 "titleColor": "#333333",
-                "subtitleFontSize": "24px",
+                "subtitleFontSize": "12px",
                 "subtitleColor": "#999999",
-                "statusFontSize": "32px",
+                "statusFontSize": "16px",
                 "statusFontWeight": "Semibold",
                 "statusColor": "#F87B21",
-                "statusDescFontSize": "24px",
+                "statusDescFontSize": "12px",
                 "statusDescColor": "#999999",
-                "iconSize": "44px",
+                "iconSize": "22px",
                 "iconColor": "#333333"
               }
             },
@@ -906,17 +906,17 @@
                 {
                   "name": "表单项",
                   "properties": {
-                    "labelFontSize": "32px",
+                    "labelFontSize": "16px",
                     "labelColor": "#333333",
-                    "labelMarginBottom": "12px",
-                    "inputHeight": "80px",
-                    "inputPadding": "16px",
+                    "labelMarginBottom": "6px",
+                    "inputHeight": "40px",
+                    "inputPadding": "8px",
                     "inputBackgroundColor": "#F8F9FC",
                     "inputBorderColor": "#CBD8F2",
-                    "inputBorderRadius": "8px",
-                    "errorMessageFontSize": "24px",
+                    "inputBorderRadius": "4px",
+                    "errorMessageFontSize": "12px",
                     "errorMessageColor": "#FF2D2D",
-                    "errorMessageMarginTop": "8px"
+                    "errorMessageMarginTop": "4px"
                   }
                 }
               ]
@@ -933,56 +933,56 @@
                   "name": "32号字·五项+（滚动）",
                   "properties": {
                     "backgroundColor": "#FFFFFF",
-                    "tabHeight": "89px",
-                    "tabFontSize": "32px",
+                    "tabHeight": "44.5px",
+                    "tabFontSize": "16px",
                     "activeTabFontWeight": "Semibold",
                     "inactiveTabFontWeight": "Regular",
                     "tabColor": "#333333",
                     "activeTabColor": "#333333",
                     "activeTabIndicatorColor": "#FF6435",
-                    "activeTabIndicatorHeight": "4px",
-                    "activeTabIndicatorWidth": "48px",
-                    "tabGap": "44px",
-                    "padding": "20px 0 12px",
+                    "activeTabIndicatorHeight": "2px",
+                    "activeTabIndicatorWidth": "24px",
+                    "tabGap": "22px",
+                    "padding": "10px",
                     "dividerColor": "#EBEBEB",
-                    "dividerHeight": "1px"
+                    "dividerHeight": "0.5px"
                   }
                 },
                 {
                   "name": "32号字·四项",
                   "properties": {
                     "backgroundColor": "#FFFFFF",
-                    "tabHeight": "89px",
-                    "tabFontSize": "32px",
+                    "tabHeight": "44.5px",
+                    "tabFontSize": "16px",
                     "activeTabFontWeight": "Semibold",
                     "inactiveTabFontWeight": "Regular",
                     "tabColor": "#333333",
                     "activeTabColor": "#333333",
                     "activeTabIndicatorColor": "#FF6435",
-                    "activeTabIndicatorHeight": "4px",
-                    "activeTabIndicatorWidth": "48px",
-                    "tabGap": "66px",
-                    "padding": "20px 0 12px",
+                    "activeTabIndicatorHeight": "2px",
+                    "activeTabIndicatorWidth": "24px",
+                    "tabGap": "33px",
+                    "padding": "10px",
                     "dividerColor": "#EBEBEB",
-                    "dividerHeight": "1px"
+                    "dividerHeight": "0.5px"
                   }
                 },
                 {
                   "name": "32号字·三项",
                   "properties": {
                     "backgroundColor": "#FFFFFF",
-                    "tabHeight": "89px",
-                    "tabFontSize": "32px",
+                    "tabHeight": "44.5px",
+                    "tabFontSize": "16px",
                     "activeTabFontWeight": "Semibold",
                     "inactiveTabFontWeight": "Regular",
                     "tabColor": "#333333",
                     "activeTabColor": "#333333",
                     "activeTabIndicatorColor": "#FF6435",
-                    "activeTabIndicatorHeight": "4px",
-                    "activeTabIndicatorWidth": "48px",
-                    "padding": "20px 0 12px",
+                    "activeTabIndicatorHeight": "2px",
+                    "activeTabIndicatorWidth": "24px",
+                    "padding": "10px",
                     "dividerColor": "#EBEBEB",
-                    "dividerHeight": "1px"
+                    "dividerHeight": "0.5px"
                   }
                 }
               ]
@@ -999,52 +999,52 @@
           "items": [
             {
               "name": "极微小间距",
-              "value": "2px",
+              "value": "1px",
               "description": "极微小间距"
             },
             {
               "name": "微小间距",
-              "value": "4px",
+              "value": "2px",
               "description": "微小间距"
             },
             {
               "name": "小间距",
-              "value": "8px",
+              "value": "4px",
               "description": "组件内部小间距"
             },
             {
               "name": "中小组间距",
-              "value": "12px",
+              "value": "6px",
               "description": "组件间中小组间距"
             },
             {
               "name": "中等间距",
-              "value": "16px",
+              "value": "8px",
               "description": "组件间中等间距"
             },
             {
               "name": "中大间距",
-              "value": "20px",
+              "value": "10px",
               "description": "模块间中大间距"
             },
             {
               "name": "大间距",
-              "value": "24px",
+              "value": "12px",
               "description": "模块间大间距"
             },
             {
               "name": "超大间距",
-              "value": "32px",
+              "value": "16px",
               "description": "区域间超大间距"
             },
             {
               "name": "特大间距",
-              "value": "40px",
+              "value": "20px",
               "description": "页面级特大间距"
             },
             {
               "name": "巨间距",
-              "value": "48px",
+              "value": "24px",
               "description": "页面级巨间距"
             }
           ]
@@ -1054,22 +1054,22 @@
           "items": [
             {
               "name": "小圆角",
-              "value": "4px",
+              "value": "2px",
               "description": "小元素圆角"
             },
             {
               "name": "中圆角",
-              "value": "8px",
+              "value": "4px",
               "description": "中等元素圆角"
             },
             {
               "name": "大圆角",
-              "value": "16px",
+              "value": "8px",
               "description": "大元素圆角"
             },
             {
               "name": "超大圆角",
-              "value": "24px",
+              "value": "12px",
               "description": "特殊元素圆角"
             }
           ]
@@ -1080,15 +1080,15 @@
             {
               "name": "页面容器",
               "properties": {
-                "paddingHorizontal": "24px",
-                "paddingTop": "100px",
-                "paddingBottom": "32px"
+                "paddingHorizontal": "12px",
+                "paddingTop": "50px",
+                "paddingBottom": "16px"
               }
             },
             {
               "name": "内容容器",
               "properties": {
-                "maxWidth": "750px",
+                "maxWidth": "375px",
                 "marginHorizontal": "auto"
               }
             }
@@ -1109,22 +1109,22 @@
           "items": [
             {
               "name": "小图标",
-              "value": "24px",
+              "value": "12px",
               "description": "小尺寸图标"
             },
             {
               "name": "中等图标",
-              "value": "32px",
+              "value": "16px",
               "description": "中等尺寸图标"
             },
             {
               "name": "大图标",
-              "value": "48px",
+              "value": "24px",
               "description": "大尺寸图标"
             },
             {
               "name": "超大图标",
-              "value": "64px",
+              "value": "32px",
               "description": "超大尺寸图标"
             }
           ]
@@ -1176,7 +1176,7 @@
         },
         {
           "name": "MobileFrame边框",
-          "value": "outline outline-[8px] outline-[#1A1A1A]",
+          "value": "outline outline-[4px] outline-[#1A1A1A]",
           "description": "使用outline而非border，避免侵占内部空间"
         },
         {
@@ -1195,50 +1195,90 @@
             {
               "name": "组合1",
               "properties": {
-                "titleFontSize": "56px",
+                "titleFontSize": "28px",
                 "titleFontWeight": "Medium",
                 "titleColor": "#333333",
-                "subtitleFontSize": "32px",
+                "subtitleFontSize": "16px",
                 "subtitleFontWeight": "Regular",
                 "subtitleColor": "#999999",
-                "spacing": "4px"
+                "spacing": "2px"
               }
             },
             {
               "name": "组合2",
               "properties": {
-                "titleFontSize": "48px",
+                "titleFontSize": "24px",
                 "titleFontWeight": "Medium",
                 "titleColor": "#333333",
-                "subtitleFontSize": "28px",
+                "subtitleFontSize": "14px",
                 "subtitleFontWeight": "Regular",
                 "subtitleColor": "#999999",
-                "spacing": "4px"
+                "spacing": "2px"
               }
             },
             {
               "name": "组合3",
               "properties": {
-                "titleFontSize": "40px",
+                "titleFontSize": "20px",
                 "titleFontWeight": "Medium",
                 "titleColor": "#333333",
-                "subtitleFontSize": "28px",
+                "subtitleFontSize": "14px",
                 "subtitleFontWeight": "Regular",
                 "subtitleColor": "#999999",
-                "spacing": "4px"
+                "spacing": "2px"
               }
             },
             {
               "name": "组合4",
               "properties": {
-                "titleFontSize": "36px",
+                "titleFontSize": "18px",
                 "titleFontWeight": "Medium",
                 "titleColor": "#333333",
-                "subtitleFontSize": "24px",
+                "subtitleFontSize": "12px",
                 "subtitleFontWeight": "Regular",
                 "subtitleColor": "#999999",
-                "spacing": "4px"
+                "spacing": "2px"
               }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "已知问题修复记录",
+      "items": [
+        {
+          "name": "2026-04-03",
+          "items": [
+            {
+              "name": "MobileFrame border侵占内容宽度",
+              "fix": "border-[8px] 改为 outline outline-[4px]",
+              "description": "使用outline避免侵占内容区域"
+            },
+            {
+              "name": "页面出现滚动条",
+              "fix": "全局CSS隐藏滚动条",
+              "description": "保持滚动功能但隐藏滚动条"
+            },
+            {
+              "name": "卡片间距不统一",
+              "fix": "统一为10px",
+              "description": "包括首卡与头部距离"
+            },
+            {
+              "name": "字体未统一",
+              "fix": "全局设为PingFang SC",
+              "description": "使用统一的字体栈"
+            },
+            {
+              "name": "状态文案主副标题间距过大",
+              "fix": "使用-mt-[1px]",
+              "description": "紧凑贴合"
+            },
+            {
+              "name": "MobileFrame状态标签行多余",
+              "fix": "删除状态标签行",
+              "description": "通过画廊并排展示多个状态"
             }
           ]
         }
