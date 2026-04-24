@@ -2,18 +2,12 @@
 
 本文件提炼自 `滴滴货运司机端设计规范.skills`，用于在实现页面和组件时快速查阅。
 
-**重要说明**：本设计规范基于 `375px` 宽度画布制定，所有字号、间距、尺寸等参数均针对375px宽度画布优化，应用时应保持375px宽度画布（需自适应大小）。
+**重要说明**：本设计规范基于 `375px` 宽度画布制定，所有字号、间距、尺寸等参数均针对375px宽度画布优化。
 
 **尺寸换算规则（重要）**：
 - **MasterGo 设计稿来源**：所有来自 MasterGo 的设计稿均基于 `750px` 宽度画布
 - **本规范基准**：本设计规范基于 `375px` 宽度画布
-- **换算规则**：从 MasterGo 读取的尺寸数值，需自动除以 2 后再写入本规范（包括 .md 和 .skills 文件）
-- **例外情况**：本次新增的内容（MobileFrame 边框、滚动条隐藏、卡片间距 10px、字体栈、状态文案间距等）保持不变，不需要除以 2
-
-**适配技巧**：
-- 在body样式中设置`width: 100%; max-width: 375px; margin: 0 auto;`，确保页面在375px宽度下居中显示
-- 移除所有子容器中的`max-width`和`margin: 0 auto;`属性，因为body已经控制了整体宽度
-- 将媒体查询断点设置为`max-width: 375px`，确保在375px宽度时使用正常的样式，而不是小屏幕的样式
+- **换算规则**：从 MasterGo 读取的尺寸数值，需自动除以 2 后再写入本规范
 
 ## 核心原则
 
@@ -21,253 +15,198 @@
 - 高效：操作流程简洁，减少司机理解和操作成本
 - 统一：颜色、字体、组件状态与结构保持一致
 
-## 字体
+## CSS Design Token 规范（375px画布）
 
-- 中文字体：`PingFang SC`
-- 英文字体：`Barlow`
-- 全局字体栈：`PingFang SC, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Microsoft YaHei', sans-serif`
+### 颜色 Token
 
-## 字号
+| Token名称 | 值 |
+|-----------|-----|
+| token-color | `rgba(255, 100, 53, 1)` |
+| token-color-1 | `rgba(0, 181, 150, 1)` |
+| token-color-2 | `rgba(255, 159, 14, 1)` |
+| token-color-3 | `rgba(0, 181, 150, 1)` |
+| token-color-4 | `rgba(45, 187, 122, 1)` |
+| token-color-5 | `rgba(22, 140, 255, 1)` |
+| token-color-6 | `rgba(107, 50, 236, 1)` |
+| token-color-7 | `rgba(25, 52, 88, 1)` |
+| token-color-8 | `rgba(246, 248, 251, 1)` |
+| token-color-9 | `rgba(235, 236, 242, 1)` |
+| token-color-10 | `rgba(255, 255, 255, 1)` |
+| token-color-11 | `rgba(94, 113, 138, 1)` |
+| token-color-12 | `rgba(163, 174, 188, 1)` |
+| token-color-13 | `rgba(217, 227, 242, 1)` |
+| token-color-14 | `rgba(26, 26, 26, 1)` |
+| token-color-15 | `rgba(51, 51, 51, 1)` |
+| token-color-16 | `rgba(102, 102, 102, 1)` |
+| token-color-17 | `rgba(153, 153, 153, 1)` |
+| token-color-18 | `rgba(204, 204, 204, 1)` |
+| token-color-19 | `rgba(0, 0, 0, 0.75)` |
+| token-color-20 | `rgba(255, 67, 10, 1)` |
+| token-color-21 | `rgba(255, 84, 33, 1)` |
+| token-color-22 | `rgba(255, 116, 73, 1)` |
+| token-color-23 | `rgba(255, 131, 93, 1)` |
+| token-color-24 | `rgba(255, 147, 114, 1)` |
+| token-color-25 | `rgba(255, 162, 134, 1)` |
+| token-color-26 | `rgba(255, 177, 154, 1)` |
+| token-color-27 | `rgba(255, 193, 174, 1)` |
+| token-color-28 | `rgba(255, 208, 194, 1)` |
+| token-color-29 | `rgba(255, 224, 215, 1)` |
+| token-color-30 | `rgba(255, 239, 235, 1)` |
+| token-color-31 | `rgba(255, 153, 0, 1)` |
+| token-color-32 | `rgba(255, 162, 23, 1)` |
+| token-color-33 | `rgba(255, 169, 38, 1)` |
+| token-color-34 | `rgba(255, 178, 62, 1)` |
+| token-color-35 | `rgba(255, 188, 86, 1)` |
+| token-color-36 | `rgba(255, 197, 110, 1)` |
+| token-color-37 | `rgba(255, 217, 159, 1)` |
+| token-color-38 | `rgba(255, 226, 183, 1)` |
+| token-color-39 | `rgba(255, 236, 207, 1)` |
+| token-color-40 | `rgba(255, 245, 231, 1)` |
+| token-color-41 | `rgba(255, 3, 0, 1)` |
+| token-color-42 | `rgba(255, 51, 47, 1)` |
+| token-color-43 | `rgba(255, 86, 83, 1)` |
+| token-color-44 | `rgba(255, 105, 102, 1)` |
+| token-color-45 | `rgba(255, 123, 121, 1)` |
+| token-color-46 | `rgba(255, 142, 140, 1)` |
+| token-color-47 | `rgba(255, 161, 159, 1)` |
+| token-color-48 | `rgba(255, 180, 179, 1)` |
+| token-color-49 | `rgba(255, 199, 198, 1)` |
+| token-color-50 | `rgba(255, 217, 217, 1)` |
+| token-color-51 | `rgba(255, 236, 236, 1)` |
+| token-color-52 | `rgba(0, 135, 112, 1)` |
+| token-color-53 | `rgba(5, 152, 127, 1)` |
+| token-color-54 | `rgba(26, 188, 161, 1)` |
+| token-color-55 | `rgba(51, 196, 171, 1)` |
+| token-color-56 | `rgba(77, 203, 181, 1)` |
+| token-color-57 | `rgba(102, 211, 192, 1)` |
+| token-color-58 | `rgba(128, 218, 203, 1)` |
+| token-color-59 | `rgba(153, 225, 213, 1)` |
+| token-color-60 | `rgba(178, 233, 223, 1)` |
+| token-color-61 | `rgba(204, 240, 234, 1)` |
+| token-color-62 | `rgba(229, 248, 244, 1)` |
+| token-color-63 | `rgba(0, 134, 72, 1)` |
+| token-color-64 | `rgba(26, 159, 98, 1)` |
+| token-color-65 | `rgba(66, 194, 135, 1)` |
+| token-color-66 | `rgba(87, 201, 149, 1)` |
+| token-color-67 | `rgba(108, 207, 162, 1)` |
+| token-color-68 | `rgba(129, 214, 175, 1)` |
+| token-color-69 | `rgba(150, 221, 188, 1)` |
+| token-color-70 | `rgba(171, 228, 202, 1)` |
+| token-color-71 | `rgba(192, 235, 215, 1)` |
+| token-color-72 | `rgba(213, 241, 228, 1)` |
+| token-color-73 | `rgba(234, 248, 242, 1)` |
+| token-color-74 | `rgba(0, 94, 255, 1)` |
+| token-color-75 | `rgba(14, 120, 255, 1)` |
+| token-color-76 | `rgba(45, 151, 255, 1)` |
+| token-color-77 | `rgba(69, 163, 255, 1)` |
+| token-color-78 | `rgba(92, 175, 255, 1)` |
+| token-color-79 | `rgba(115, 186, 255, 1)` |
+| token-color-80 | `rgba(138, 197, 255, 1)` |
+| token-color-81 | `rgba(162, 209, 255, 1)` |
+| token-color-82 | `rgba(185, 221, 255, 1)` |
+| token-color-83 | `rgba(208, 232, 255, 1)` |
+| token-color-84 | `rgba(232, 243, 255, 1)` |
+| token-color-85 | `rgba(3, 19, 41, 1)` |
+| token-color-86 | `rgba(13, 35, 65, 1)` |
+| token-color-87 | `rgba(71, 93, 121, 1)` |
+| token-color-88 | `rgba(94, 113, 138, 1)` |
+| token-color-89 | `rgba(117, 133, 155, 1)` |
+| token-color-90 | `rgba(140, 153, 171, 1)` |
+| token-color-91 | `rgba(163, 174, 188, 1)` |
+| token-color-92 | `rgba(186, 194, 205, 1)` |
+| token-color-93 | `rgba(232, 235, 238, 1)` |
+| token-color-94 | `rgba(83, 14, 238, 1)` |
+| token-color-95 | `rgba(102, 38, 246, 1)` |
+| token-color-96 | `rgba(122, 71, 238, 1)` |
+| token-color-97 | `rgba(137, 91, 240, 1)` |
+| token-color-98 | `rgba(166, 132, 244, 1)` |
+| token-color-99 | `rgba(181, 152, 245, 1)` |
+| token-color-100 | `rgba(196, 173, 247, 1)` |
+| token-color-101 | `rgba(211, 193, 249, 1)` |
+| token-color-102 | `rgba(225, 214, 251, 1)` |
+| token-color-103 | `rgba(240, 234, 253, 1)` |
+| token-color-104 | `rgba(0, 0, 0, 0.55)` |
+| token-color-105 | `rgba(255, 67, 64, 1)` |
+| token-color-106 | `rgba(240, 241, 245, 1)` |
+| token-color-107 | `rgba(255, 207, 134, 1)` |
+| token-color-108 | `rgba(48, 72, 105, 1)` |
+| token-color-109 | `rgba(209, 214, 222, 1)` |
+| token-color-110 | `rgba(151, 112, 242, 1)` |
 
-- 大标题：`24px`
-- 小标题：`20px`
-- 正文：`18px`
-- 辅助文字：`14px`
-- 小字：`12px`
-- 微小文字：`10px`
+### 圆角 Token
 
-## 字重
+| Token名称 | 值 |
+|-----------|-----|
+| token-border-radius-0 | `0px` |
+| token-border-radius-4 | `2px` |
+| token-border-radius-8 | `4px` |
+| token-border-radius-12 | `6px` |
+| token-border-radius-16 | `8px` |
+| token-border-radius-20 | `10px` |
+| token-border-radius-24 | `12px` |
+| token-border-radius-32 | `16px` |
+| token-border-radius-40 | `20px` |
+| token-border-radius-60 | `30px` |
+| token-border-radius-400 | `200px` |
 
-- 常规：`Regular`
-- 中等：`Medium`
-- 中粗：`Semibold`
-- 粗体：`Bold`
+### 边框宽度 Token
 
-## 行高
+| Token名称 | 值 |
+|-----------|-----|
+| token-border-width-1 | `0.5px` |
+| token-border-width-2 | `1px` |
+| token-border-width-3 | `1.5px` |
+| token-border-width-4 | `2px` |
 
-- 大标题：`36px`
-- 小标题：`30px`
-- 正文：`27px`
-- 辅助文字：`21px`
-- 小字：`18px`
+### 投影效果 Token
 
-## 颜色
+| Token名称 | 值 |
+|-----------|-----|
+| token-effect | `0px 1px 4px 0px rgba(9, 32, 71, 0.02)` |
+| token-effect-1 | `0px 5px 20px 0px rgba(0, 49, 99, 0.08)` |
+| token-effect-2 | `0px 1px 8px 0px rgba(9, 32, 71, 0.02)` |
 
-### 品牌与强调
+### 字体组合 Token
 
-- 主品牌色：`#12C79F`
-- 高亮橙：`#FF6435`
+| Token名称 | 值 |
+|-----------|-----|
+| token-text | `400 28px "PingFang SC"` |
+| token-text-1 | `400 24px "PingFang SC"` |
+| token-text-2 | `400 22px "PingFang SC"` |
+| token-text-3 | `400 20px "PingFang SC"` |
+| token-text-4 | `400 18px "PingFang SC"` |
+| token-text-5 | `400 16px "PingFang SC"` |
+| token-text-6 | `400 14px "PingFang SC"` |
+| token-text-7 | `400 12px "PingFang SC"` |
+| token-text-8 | `400 11px "PingFang SC"` |
+| token-text-9 | `400 10px "PingFang SC"` |
+| token-text-10 | `400 9px "PingFang SC"` |
+| token-text-11 | `500 28px "PingFang SC"` |
+| token-text-12 | `500 24px "PingFang SC"` |
+| token-text-13 | `500 22px "PingFang SC"` |
+| token-text-14 | `500 20px "PingFang SC"` |
+| token-text-15 | `500 18px "PingFang SC"` |
+| token-text-16 | `500 16px "PingFang SC"` |
+| token-text-17 | `500 14px "PingFang SC"` |
+| token-text-18 | `500 12px "PingFang SC"` |
+| token-text-19 | `500 11px "PingFang SC"` |
+| token-text-20 | `500 10px "PingFang SC"` |
+| token-text-21 | `500 9px "PingFang SC"` |
+| token-text-22 | `500 45px "Barlow Condensed"` |
+| token-text-23 | `500 28px "Barlow Condensed"` |
+| token-text-24 | `500 24px "Barlow Condensed"` |
+| token-text-25 | `500 22px "Barlow Condensed"` |
+| token-text-26 | `500 20px "Barlow Condensed"` |
+| token-text-27 | `500 18px "Barlow Condensed"` |
+| token-text-28 | `500 16px "Barlow Condensed"` |
+| token-text-29 | `500 14px "Barlow Condensed"` |
+| token-text-30 | `500 12px "Barlow Condensed"` |
+| token-text-31 | `500 11px "Barlow Condensed"` |
+| token-text-32 | `500 10px "Barlow Condensed"` |
+| token-text-33 | `500 9px "Barlow Condensed"` |
+| token-text-34 | `500 36px "Barlow Condensed"` |
 
-### 功能色
+### 版本信息
 
-- 成功：`#2DBB7A`
-- 警告：`#FF9F0E`
-- 错误：`#FF4340`
-- 导航：`#168CFF`
-
-### 背景
-
-- 页面背景：`#F8F9FC`
-- 次要浅灰背景：`#F6F8FB`
-- 深蓝背景：`#193458`
-- 分割线：`#EBECF2`
-
-### 文字
-
-- 主文字：`#222222`
-- 次文字：`#666666`
-- 辅助文字：`#999999`
-- 禁用文字：`#CCCCCC`
-
-### 边框与基础色
-
-- 主边框：`#CBD8F2`
-- 次边框：`#EBECF2`
-- 白色：`#FFFFFF`
-- 黑色：`#000000`
-- 深灰：`#1A1A1A`
-
-## 投影
-
-- 轻微投影：`0px 1px 0px 0px #CBD8F2`
-- 中等投影：`0px 4px 12px 0px rgba(0, 0, 0, 0.08)`
-- 强烈投影：`0px 8px 24px 0px rgba(0, 0, 0, 0.12)`
-
-## 圆角
-
-- 2px：微小圆角
-- 4px：小圆角
-- 8px：中圆角
-- 10px：中大圆角
-- 12px：大圆角
-- 16px：超大圆角
-- 50%：圆形
-
-## 间距
-
-- 1px：极微小
-- 2px：微小
-- 4px：小
-- 6px：中小组
-- 8px：中等
-- 10px：中大
-- 12px：大
-- 16px：超大
-- 20px：特大
-- 24px：巨间距
-
-## 通用结构
-
-### 页面与内容容器
-
-- 页面容器使用移动端 `375px` 设计宽度语义
-- 页面背景优先 `#F8F9FC`
-- 内容区优先白底或浅灰分组，配合 `4px` 到 `16px` 圆角
-
-### MobileFrame 边框
-
-- **MobileFrame 外壳边框必须使用 `outline` 而非 `border`**，避免侵占内部空间
-  - ✅ 正确写法：`outline outline-[4px] outline-[#1A1A1A]`
-  - ❌ 错误写法：`border-[4px] border-[#1A1A1A]`（会导致内容区变为 375 - 8 = 367px）
-
-### 滚动条
-
-- 所有页面**隐藏滚动条**，保持滚动功能：
-  ```css
-  *::-webkit-scrollbar { display: none; }
-  * { -ms-overflow-style: none; scrollbar-width: none; }
-  ```
-
-### 卡片
-
-- **所有内容卡片统一使用以下基础样式**：
-  - 卡片阴影：`0px 1px 12px rgba(203, 216, 242, 0.12)`
-  - 卡片圆角：`12px`
-  - 背景色：`#FFFFFF`
-  - 内边距：`12px`
-  - 卡片间距：`10px`（margin-bottom）
-  - 第一张卡片与导航栏/头部的距离：`10px`（pt-[10px]）
-  - 页面水平内边距：`16px`（px-4）
-
-### 弹窗
-
-- 确认弹窗：宽 `300px`、白底、`8px` 圆角、`16px` 内边距、强投影
-- 提示弹窗：宽 `200px`、白底、`8px` 圆角、`12px` 内边距、强投影
-- 半弹窗：底部吸附、顶部圆角 `48px 48px 0 0`
-
-### 半弹窗细节
-
-- 内容区背景：`#F8F9FC`
-- 内容区圆角：`12px`
-- 内容区外边距：`14px 14px 8px`
-- 按钮区内边距：`8px 12px`
-- 按钮间距：`10px`
-- 底部指示条颜色：`#333333`
-
-## 图标
-
-- 风格：线性图标
-- 尺寸：`12px` / `16px` / `24px` / `32px`
-- 主图标色：`#333333`
-- 次图标色：`#666666`
-- 辅助图标色：`#999999`
-- 强调图标色：`#FF6435`
-- 资源：可从 IconPark 图标库引用 - https://iconpark.oceanengine.com/official
-
-## 标签
-
-- 主色标签：浅橙底，文字 `#FF7A37`
-- 成功标签：浅绿底，文字 `#00B596`
-- 警示标签：浅红底，文字 `#FF4340`
-- 常规标签：浅灰底，文字 `#000000`
-- 通用参数：`4px` 圆角，`3px 6px` 内边距，高度 `20px`，字号 `12px`
-
-## 按钮
-
-### 全局主按钮
-
-- 背景：`#FF6435`
-- 文字：`#FFFFFF`
-- 圆角：`4px`
-- A 规格：字号 `18px`，高度 `40px`
-- B 规格：字号 `16px`，高度 `36px`
-- 点击态：不透明度 `70%`
-- 禁用态：背景 `#E1E1E1`，文字 `#999999`，不透明度 `30%`
-
-### 局部按钮
-
-- 次要按钮：浅底 `#F8F9FC`，描边 `1px solid #CBD8F2`，文字 `#333333`
-- 文本按钮：透明背景，文字 `#FF6435`
-- 小型按钮：橙底白字，圆角 `3px`，字号 `14px`，高度 `32px`
-
-## 列表与表单
-
-### 基础列表
-
-- 白底
-- 圆角：`4px`
-- 列表项高度：`44px`
-- 列表项内边距：`12px`
-- 分割线：`#EFF2F6`
-
-### 列表项信息层级
-
-- 标题：`16px` / `Semibold` / `#333333`
-- 副标题：`12px` / `#999999`
-- 状态：`16px` / `Semibold` / `#F87B21`
-- 状态说明：`12px` / `#999999`
-- 图标：`22px`
-
-### 表单项
-
-- 标签字号：`16px`
-- 标签颜色：`#333333`
-- 标签下边距：`12px`
-- 输入框高度：`40px`
-- 输入框内边距：`8px`
-- 输入框背景：`#F8F9FC`
-- 输入框边框：`#CBD8F2`
-- 输入框圆角：`4px`
-- 错误文字：`12px` / `#FF2D2D`
-
-## Tab
-
-- 背景：`#FFFFFF`
-- 高度：`44.5px`
-- 字号：`16px`
-- 激活字重：`Semibold`
-- 未激活字重：`Regular`
-- 文本色：`#333333`
-- 激活指示条颜色：`#FF6435`
-- 激活指示条高度：`2px`
-- 激活指示条宽度：`24px`
-- 分割线颜色：`#EBEBEB`
-
-## 响应式
-
-- 基准设计宽度：`375px`
-- 所有页面宽度统一为 `375px`
-- 适配策略：弹性布局
-- 像素密度：`1x`
-
-## 文案组合
-
-- 双层文案组合优先使用大标题 + 小一号副标题
-- 常见组合范围：
-- 标题 `28px` / 副标题 `16px`
-- 标题 `24px` / 副标题 `14px`
-- 标题 `20px` / 副标题 `14px`
-- 标题 `18px` / 副标题 `12px`
-- 标题与副标题间距：`2px`
-- 状态文案主副标题紧凑贴合：使用 `-mt-[1px]`
-
-## 已知问题修复记录
-
-| 日期 | 问题 | 修复方案 |
-|------|------|----------|
-| 2026-04-03 | MobileFrame border 侵占内容宽度 | `border-[8px]` 改为 `outline outline-[4px]` |
-| 2026-04-03 | 页面出现滚动条 | 全局 CSS 隐藏滚动条 |
-| 2026-04-03 | 卡片间距不统一（12px） | 统一为 `10px`，含首卡与头部距离 |
-| 2026-04-03 | 字体未统一 | 全局设为 PingFang SC |
-| 2026-04-03 | 状态文案主副标题间距过大 | 使用 `-mt-[1px]` 紧凑贴合 |
-| 2026-04-03 | MobileFrame 状态标签行多余 | 删除状态标签行，通过画廊并排展示多个状态 |
+- 版本号：v1.5.0
+- 更新日期：2026-04-24
